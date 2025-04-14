@@ -1,0 +1,821 @@
+{%  extends 'base.html' %}
+
+{% block body %}
+	<div class="container-fluid">
+				<!-- Page title & breadcrumb -->
+				<div class="fx-page-title">
+					<div class="fx-breadcrumb">
+						<h5>Dashboard</h5>
+						<ul>
+							<li><a href="../base.html">Finx</a></li>
+							<li><a href="../base.html">CRM</a></li>
+							<li>Dashboard</li>
+						</ul>
+					</div>
+					<div class="fx-tools">
+						<a href="javascript:void(0)" title="Refresh" class="refresh"><i class="ri-refresh-line"></i></a>
+						<div id="pagedate">
+							<div class="fx-date-range" title="Date">
+								<span></span>
+							</div>
+						</div>
+						<div class="filter">
+							<div class="dropdown" title="Filter">
+								<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1"
+									data-bs-toggle="dropdown" aria-expanded="false">
+									<i class="ri-sound-module-line"></i>
+								</button>
+								<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+									<li><a class="dropdown-item" href="#">Deal</a></li>
+									<li><a class="dropdown-item" href="#">Revenue</a></li>
+									<li><a class="dropdown-item" href="#">Expence</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xl-3 col-md-6">
+						<div class="fx-card card-1">
+							<div class="fx-card-content label-card">
+								<div class="title">
+									<div class="growth-numbers">
+										<h4>User</h4>
+										<h5>698k</h5>
+									</div>
+									<span class="icon"><i class="ri-shield-user-line"></i></span>
+								</div>
+								<p class="card-groth up">
+									<i class="ri-arrow-up-line"></i>
+									25%
+									<span>Last Month</span>
+								</p>
+								<div class="mini-chart">
+									<div id="userNumbers"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-md-6">
+						<div class="fx-card card-2">
+							<div class="fx-card-content label-card">
+								<div class="title">
+									<div class="growth-numbers">
+										<h4>Order</h4>
+										<h5>10.63k</h5>
+									</div>
+									<span class="icon"><i class="ri-shopping-bag-3-line"></i>
+									</span>
+								</div>
+								<p class="card-groth down">
+									<i class="ri-arrow-down-line"></i>
+									.5%
+									<span>Last Month</span>
+								</p>
+								<div class="mini-chart">
+									<div id="orderNumbers"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-md-6">
+						<div class="fx-card card-3">
+							<div class="fx-card-content label-card">
+								<div class="title">
+									<div class="growth-numbers">
+										<h4>Revenue</h4>
+										<h5>$85420</h5>
+									</div>
+									<span class="icon"><i class="ri-money-dollar-circle-line"></i></span>
+								</div>
+								<p class="card-groth down">
+									<i class="ri-arrow-down-line"></i>
+									2.1%
+									<span>Last Month</span>
+								</p>
+								<div class="mini-chart">
+									<div id="revenueNumbers"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-3 col-md-6">
+						<div class="fx-card card-4">
+							<div class="fx-card-content label-card">
+								<div class="title">
+									<div class="growth-numbers">
+										<h4>Expenses</h4>
+										<h5>$56874</h5>
+									</div>
+									<span class="icon"><i class="ri-exchange-dollar-line"></i></span>
+								</div>
+								<p class="card-groth up">
+									<i class="ri-arrow-up-line"></i>
+									9%
+									<span>Last Month</span>
+								</p>
+								<div class="mini-chart">
+									<div id="expensesNumbers"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xl-4 col-md-12">
+						<div class="fx-card">
+							<div class="fx-card-header">
+								<h4 class="fx-card-title">Events</h4>
+								<div class="header-tools">
+									<a href="calendar.html" class="link" title="View More"><i
+											class="ri-arrow-right-line"></i></a>
+								</div>
+							</div>
+							<div class="fx-card-content">
+								<div class="fx-calendar">
+									<div id="eventCalendar" class="calendar-container"></div>
+									<div class="fx-event-list">
+										<ul>
+											<li><span class="date active">
+													<span>06</span><span class="day">Thu</span></span>
+												<p><span class="time">11:15</span>Visit Google Headquarters</p>
+											</li>
+											<li>
+												<span class="date"><span>04</span><span class="day">Tue</span></span>
+												<p><span class="time">03:40</span>John Doe Birthday</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-8 col-md-12">
+						<div class="fx-card revenue-overview">
+							<div class="fx-card-header header-575">
+								<h4 class="fx-card-title">Revenue Overview</h4>
+								<div class="header-tools">
+									<a href="javascript:void(0)" class="m-r-10 fx-full-card">
+										<i class="ri-fullscreen-line" title="Full Screen"></i></a>
+									<div class="fx-date-range date" title="Date">
+										<span></span>
+									</div>
+								</div>
+							</div>
+							<div class="fx-card-content">
+								<div class="fx-chart-header">
+									<div class="block">
+										<h6>Orders</h6>
+										<h5>825
+											<span class="up"><i class="ri-arrow-up-line"></i>24%</span>
+										</h5>
+									</div>
+									<div class="block">
+										<h6>Revenue</h6>
+										<h5>$89k
+											<span class="up"><i class="ri-arrow-up-line"></i>24%</span>
+										</h5>
+									</div>
+									<div class="block">
+										<h6>Expence</h6>
+										<h5>$68k
+											<span class="down"><i class="ri-arrow-down-line"></i>24%</span>
+										</h5>
+									</div>
+									<div class="block">
+										<h6>Profit</h6>
+										<h5>$21k
+											<span class="up"><i class="ri-arrow-up-line"></i>24%</span>
+										</h5>
+									</div>
+								</div>
+								<div class="fx-chart-content">
+									<div id="overviewChart"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xl-4 col-md-12">
+						<div class="fx-card" id="fxmap">
+							<div class="fx-card-header">
+								<h4 class="fx-card-title">Top Country</h4>
+								<div class="header-tools">
+									<div class="fx-date-range dots">
+										<span></span>
+									</div>
+								</div>
+							</div>
+							<div class="fx-card-content">
+								<div class="fx-map-view">
+									<div id="world-map"></div>
+								</div>
+								<div class="fx-map-detail">
+									<div class="fx-map-detail">
+										<div class="title">
+											<h5>Revenue</h5>
+											<a href="#" class="visit" title="View all data">view <i
+													class="ri-arrow-right-line"></i></a>
+										</div>
+										<div class="fx-detail-list">
+											<div class="fx-label">
+												<div>
+													<label>India</label>
+													<span class="down"><i class="ri-arrow-down-line"></i>2.6%</span>
+												</div>
+												<p>$958.5k</p>
+											</div>
+											<div class="progress">
+												<div class="progress-bar bg-secondary" role="progressbar"
+													style="width: 95%" aria-valuenow="95" aria-valuemin="0"
+													aria-valuemax="100"></div>
+											</div>
+										</div>
+										<div class="fx-detail-list">
+											<div class="fx-label">
+												<div>
+													<label>Morocco</label>
+													<span class="up"><i class="ri-arrow-up-line"></i>5.6%</span>
+												</div>
+												<p>$788.7k</p>
+											</div>
+											<div class="progress">
+												<div class="progress-bar bg-primary" role="progressbar"
+													style="width: 84%" aria-valuenow="84" aria-valuemin="0"
+													aria-valuemax="100"></div>
+											</div>
+										</div>
+										<div class="fx-detail-list">
+											<div class="fx-label">
+												<div>
+													<label>Brazil</label>
+													<span class="up"><i class="ri-arrow-up-line"></i>3.7%</span>
+												</div>
+												<p>$592.2k</p>
+											</div>
+											<div class="progress">
+												<div class="progress-bar bg-primary" role="progressbar"
+													style="width: 76%" aria-valuenow="76" aria-valuemin="0"
+													aria-valuemax="100"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-4 col-md-12">
+						<div class="fx-card" id="campaigns">
+							<div class="fx-card-header">
+								<h4 class="fx-card-title">Campaigns</h4>
+								<div class="header-tools">
+									<div class="fx-date-range dots">
+										<span></span>
+									</div>
+								</div>
+							</div>
+							<div class="fx-card-content">
+								<div class="fx-chart-header-2">
+									<div class="block">
+										<h6>Reached</h6>
+										<h5><span class="up">96%<i class="ri-arrow-up-line"></i></span>825k</h5>
+									</div>
+									<div class="block">
+										<h6>Expence</h6>
+										<h5><span class="down">96%<i class="ri-arrow-down-line"></i></span>$84k</h5>
+									</div>
+									<div class="block">
+										<h6>Deals</h6>
+										<h5><span class="up">72%<i class="ri-arrow-up-line"></i></span>2.5k</h5>
+									</div>
+								</div>
+								<div class="fx-chart-content">
+									<div id="campaignsChart"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-4 col-md-12">
+						<div class="fx-card">
+							<div class="fx-card-header">
+								<h4 class="fx-card-title">Activiy</h4>
+								<div class="header-tools">
+									<div class="dropdown" title="Settings">
+										<button class="btn btn-secondary dropdown-toggle" type="button"
+											data-bs-toggle="dropdown" aria-expanded="false">
+											<i class="mdi mdi-dots-vertical"></i>
+										</button>
+										<ul class="dropdown-menu">
+											<li><a class="dropdown-item" href="#">Today</a></li>
+											<li><a class="dropdown-item" href="#">Yesterday</a></li>
+											<li><a class="dropdown-item" href="#">Last 7 Days</a></li>
+											<li><a class="dropdown-item" href="#">This Month</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="fx-card-content activity-max-height fx-simplebar" data-simplebar>
+								<div class="activity-list">
+									<ul>
+										<li>
+											<span class="date-time">8 Thu<span class="time">11:30 AM - 05:10 PM
+												</span></span>
+											<p class="title">Project Submitted from Smith</p>
+											<p class="detail">Lorem Ipsum is simply dummy text of the printing and
+												lorem is typesetting industry.</p>
+										</li>
+										<li>
+											<span class="date-time warn">7 Wed<span class="time">1:30 PM - 02:30 PM
+												</span></span>
+											<p class="title">Morgus pvt - project due</p>
+											<p class="detail">Project modul delay for some bugs.</p>
+										</li>
+										<li>
+											<span class="date-time">6 Tue<span class="time">9:30 AM - 11:00 AM
+												</span></span>
+											<p class="title">Interview for management dept.</p>
+											<p class="detail">There are many variations of passages of Lorem Ipsum
+												available, but the majority have suffered alteration in some form,
+												by injected humour.</p>
+
+										</li>
+										<li>
+											<span class="date-time">5 Mon<span class="time">3:30 AM - 4:00 PM
+												</span></span>
+											<p class="title">Meeting with mr. Ken doe</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xl-4 col-md-12">
+						<div class="fx-card">
+							<div class="fx-card-header">
+								<h4 class="fx-card-title">Todo</h4>
+								<div class="header-tools">
+									<a href="todo.html" class="link" title="View More"><i
+											class="ri-arrow-right-line"></i></a>
+								</div>
+							</div>
+							<div class="fx-card-content todo-max-height fx-simplebar" data-simplebar>
+								<div class="todo-list">
+									<form>
+										<div class="form-group">
+											<input type="checkbox" id="todo1" name="todo" value="todo">
+											<label for="todo1">
+												<span>Schedule team meeting for the next admin project and assign
+													task.</span>
+												<span class="date-time">6:30AM, Today</span>
+											</label>
+											<div class="dropdown todo-settings drop-settings">
+												<button class="btn btn-secondary dropdown-toggle" type="button"
+													data-bs-toggle="dropdown" aria-expanded="false">
+													<i class="mdi mdi-dots-vertical"></i>
+												</button>
+												<ul class="dropdown-menu">
+													<li><a class="dropdown-item" href="#">Rename</a></li>
+													<li><a class="dropdown-item" href="#">Add note</a></li>
+													<li><a class="dropdown-item" href="#">Remove</a></li>
+													<li><a class="dropdown-item" href="#">edit note</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="form-group">
+											<input type="checkbox" id="todo2" name="todo" value="todo" checked>
+											<label for="todo2">
+												<span>Create employee list with role for upcoming event.</span>
+												<span class="date-time">8AM, Today</span>
+											</label>
+											<div class="dropdown todo-settings drop-settings">
+												<button class="btn btn-secondary dropdown-toggle" type="button"
+													data-bs-toggle="dropdown" aria-expanded="false">
+													<i class="mdi mdi-dots-vertical"></i>
+												</button>
+												<ul class="dropdown-menu">
+													<li><a class="dropdown-item" href="#">Rename</a></li>
+													<li><a class="dropdown-item" href="#">Add note</a></li>
+													<li><a class="dropdown-item" href="#">Remove</a></li>
+													<li><a class="dropdown-item" href="#">edit note</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="form-group">
+											<input type="checkbox" id="todo3" name="todo" value="todo">
+											<label for="todo3">
+												<span>Meeting with lorence company for marketing and campaign.</span>
+												<span class="date-time">10:45AM, Today</span>
+											</label>
+											<div class="dropdown todo-settings drop-settings">
+												<button class="btn btn-secondary dropdown-toggle" type="button"
+													data-bs-toggle="dropdown" aria-expanded="false">
+													<i class="mdi mdi-dots-vertical"></i>
+												</button>
+												<ul class="dropdown-menu">
+													<li><a class="dropdown-item" href="#">Rename</a></li>
+													<li><a class="dropdown-item" href="#">Add note</a></li>
+													<li><a class="dropdown-item" href="#">Remove</a></li>
+													<li><a class="dropdown-item" href="#">edit note</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="form-group">
+											<input type="checkbox" id="todo4" name="todo" value="todo" checked>
+											<label for="todo4">
+												<span>Attend conference for company new branches development.</span>
+												<span class="date-time">3:15PM, Today</span>
+											</label>
+											<div class="dropdown todo-settings drop-settings">
+												<button class="btn btn-secondary dropdown-toggle" type="button"
+													data-bs-toggle="dropdown" aria-expanded="false">
+													<i class="mdi mdi-dots-vertical"></i>
+												</button>
+												<ul class="dropdown-menu">
+													<li><a class="dropdown-item" href="#">Rename</a></li>
+													<li><a class="dropdown-item" href="#">Add note</a></li>
+													<li><a class="dropdown-item" href="#">Remove</a></li>
+													<li><a class="dropdown-item" href="#">edit note</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="form-group">
+											<input type="checkbox" id="todo5" name="todo" value="todo">
+											<label for="todo5">
+												<span>Create project list and follow up with team.</span>
+												<span class="date-time">6:00AM, 15/05/2023</span>
+											</label>
+											<div class="dropdown todo-settings drop-settings">
+												<button class="btn btn-secondary dropdown-toggle" type="button"
+													data-bs-toggle="dropdown" aria-expanded="false">
+													<i class="mdi mdi-dots-vertical"></i>
+												</button>
+												<ul class="dropdown-menu">
+													<li><a class="dropdown-item" href="#">Rename</a></li>
+													<li><a class="dropdown-item" href="#">Add note</a></li>
+													<li><a class="dropdown-item" href="#">Remove</a></li>
+													<li><a class="dropdown-item" href="#">edit note</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="form-group">
+											<input type="checkbox" id="todo6" name="todo" value="todo">
+											<label for="todo6">
+												<span>Calculate employee leaves and make salary.</span>
+												<span class="date-time">09:00AM, 26/02/2023</span>
+											</label>
+											<div class="dropdown todo-settings drop-settings">
+												<button class="btn btn-secondary dropdown-toggle" type="button"
+													data-bs-toggle="dropdown" aria-expanded="false">
+													<i class="mdi mdi-dots-vertical"></i>
+												</button>
+												<ul class="dropdown-menu">
+													<li><a class="dropdown-item" href="#">Rename</a></li>
+													<li><a class="dropdown-item" href="#">Add note</a></li>
+													<li><a class="dropdown-item" href="#">Remove</a></li>
+													<li><a class="dropdown-item" href="#">edit note</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="form-group">
+											<input type="checkbox" id="todo7" name="todo" value="todo">
+											<label for="todo7">
+												<span>Rise fund from morgus for company expand.</span>
+												<span class="date-time">010:00AM, 02/11/2023</span>
+											</label>
+											<div class="dropdown todo-settings drop-settings">
+												<button class="btn btn-secondary dropdown-toggle" type="button"
+													data-bs-toggle="dropdown" aria-expanded="false">
+													<i class="mdi mdi-dots-vertical"></i>
+												</button>
+												<ul class="dropdown-menu">
+													<li><a class="dropdown-item" href="#">Rename</a></li>
+													<li><a class="dropdown-item" href="#">Add note</a></li>
+													<li><a class="dropdown-item" href="#">Remove</a></li>
+													<li><a class="dropdown-item" href="#">edit note</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="form-group">
+											<input type="checkbox" id="todo8" name="todo" value="todo">
+											<label for="todo8">
+												<span>Visit new branch and check all activity.</span>
+												<span class="date-time">12:00AM, 18/04/2023</span>
+											</label>
+											<div class="dropdown todo-settings drop-settings">
+												<button class="btn btn-secondary dropdown-toggle" type="button"
+													data-bs-toggle="dropdown" aria-expanded="false">
+													<i class="mdi mdi-dots-vertical"></i>
+												</button>
+												<ul class="dropdown-menu">
+													<li><a class="dropdown-item" href="#">Rename</a></li>
+													<li><a class="dropdown-item" href="#">Add note</a></li>
+													<li><a class="dropdown-item" href="#">Remove</a></li>
+													<li><a class="dropdown-item" href="#">edit note</a></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-8 col-md-12">
+						<div class="fx-card" id="dealtbl">
+							<div class="fx-card-header">
+								<h4 class="fx-card-title">Deals</h4>
+								<div class="header-tools">
+									<a href="javascript:void(0)" class="m-r-10 fx-full-card"><i
+											class="ri-fullscreen-line" title="Full Screen"></i></a>
+									<div class="fx-date-range dots">
+										<span></span>
+									</div>
+								</div>
+							</div>
+							<div class="fx-card-content card-default">
+								<div class="deal-table">
+									<div class="table-responsive">
+										<table id="lead-data-table" class="table">
+											<thead>
+												<tr>
+													<th>ID</th>
+													<th>Name</th>
+													<th>Date</th>
+													<th>Team</th>
+													<th>Status</th>
+													<th>Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="token">2650</td>
+													<td><img class="cat-thumb" src="assets/img/clients/1.jpg"
+															alt="clients Image"><span class="name">Monsy Pvt.</span>
+													</td>
+													<td>15/01/2023</td>
+													<td>Zara nails</td>
+													<td class="active">ACTIVE</td>
+													<td>
+														<div class="d-flex justify-content-center">
+															<button type="button" class="btn btn-outline-success"><i
+																	class="ri-information-line"></i></button>
+															<button type="button"
+																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
+																data-bs-toggle="dropdown" aria-haspopup="true"
+																aria-expanded="false" data-display="static">
+																<span class="sr-only"><i
+																		class="ri-settings-3-line"></i></span>
+															</button>
+															<div class="dropdown-menu">
+																<a class="dropdown-item" href="#">Edit</a>
+																<a class="dropdown-item" href="#">Delete</a>
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td class="token">2650</td>
+													<td><img class="cat-thumb" src="assets/img/clients/2.jpg"
+															alt="clients Image"><span class="name">Capital Mines
+															Pvt.</span></td>
+													<td>15/01/2023</td>
+													<td>Zara nails</td>
+													<td class="pending">Pending</td>
+													<td>
+														<div class="d-flex justify-content-center">
+															<button type="button" class="btn btn-outline-success"><i
+																	class="ri-information-line"></i></button>
+															<button type="button"
+																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
+																data-bs-toggle="dropdown" aria-haspopup="true"
+																aria-expanded="false" data-display="static">
+																<span class="sr-only"><i
+																		class="ri-settings-3-line"></i></span>
+															</button>
+															<div class="dropdown-menu">
+																<a class="dropdown-item" href="#">Edit</a>
+																<a class="dropdown-item" href="#">Delete</a>
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td class="token">2365</td>
+													<td><img class="cat-thumb" src="assets/img/clients/3.jpg"
+															alt="clients Image"><span class="name">Myras
+															infitech.</span></td>
+													<td>02/08/2022</td>
+													<td>Olive Yew</td>
+													<td class="close">Close</td>
+													<td>
+														<div class="d-flex justify-content-center">
+															<button type="button" class="btn btn-outline-success"><i
+																	class="ri-information-line"></i></button>
+															<button type="button"
+																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
+																data-bs-toggle="dropdown" aria-haspopup="true"
+																aria-expanded="false" data-display="static">
+																<span class="sr-only"><i
+																		class="ri-settings-3-line"></i></span>
+															</button>
+															<div class="dropdown-menu">
+																<a class="dropdown-item" href="#">Edit</a>
+																<a class="dropdown-item" href="#">Delete</a>
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td class="token">2205</td>
+													<td><img class="cat-thumb" src="assets/img/clients/4.jpg"
+															alt="clients Image"><span class="name">Gujarat agro
+															LLP.</span></td>
+													<td>23/02/2023</td>
+													<td>Allie Grater</td>
+													<td class="success">Success</td>
+													<td>
+														<div class="d-flex justify-content-center">
+															<button type="button" class="btn btn-outline-success"><i
+																	class="ri-information-line"></i></button>
+															<button type="button"
+																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
+																data-bs-toggle="dropdown" aria-haspopup="true"
+																aria-expanded="false" data-display="static">
+																<span class="sr-only"><i
+																		class="ri-settings-3-line"></i></span>
+															</button>
+															<div class="dropdown-menu">
+																<a class="dropdown-item" href="#">Edit</a>
+																<a class="dropdown-item" href="#">Delete</a>
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td class="token">2187</td>
+													<td><img class="cat-thumb" src="assets/img/clients/5.jpg"
+															alt="clients Image"><span class="name">KK Food LLC.</span>
+													</td>
+													<td>17/01/2022</td>
+													<td>Stanley Knife</td>
+													<td class="active">ACTIVE</td>
+													<td>
+														<div class="d-flex justify-content-center">
+															<button type="button" class="btn btn-outline-success"><i
+																	class="ri-information-line"></i></button>
+															<button type="button"
+																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
+																data-bs-toggle="dropdown" aria-haspopup="true"
+																aria-expanded="false" data-display="static">
+																<span class="sr-only"><i
+																		class="ri-settings-3-line"></i></span>
+															</button>
+															<div class="dropdown-menu">
+																<a class="dropdown-item" href="#">Edit</a>
+																<a class="dropdown-item" href="#">Delete</a>
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td class="token">2050</td>
+													<td><img class="cat-thumb" src="assets/img/clients/6.jpg"
+															alt="clients Image"><span class="name">Maruti agro.</span>
+													</td>
+													<td>09/09/2022</td>
+													<td>Zara nails</td>
+													<td class="close">Close</td>
+													<td>
+														<div class="d-flex justify-content-center">
+															<button type="button" class="btn btn-outline-success"><i
+																	class="ri-information-line"></i></button>
+															<button type="button"
+																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
+																data-bs-toggle="dropdown" aria-haspopup="true"
+																aria-expanded="false" data-display="static">
+																<span class="sr-only"><i
+																		class="ri-settings-3-line"></i></span>
+															</button>
+															<div class="dropdown-menu">
+																<a class="dropdown-item" href="#">Edit</a>
+																<a class="dropdown-item" href="#">Delete</a>
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td class="token">1995</td>
+													<td><img class="cat-thumb" src="assets/img/clients/7.jpg"
+															alt="clients Image"><span class="name">Monsy pvt.</span>
+													</td>
+													<td>11/08/2022</td>
+													<td>Ivan Itchinos</td>
+													<td class="success">success</td>
+													<td>
+														<div class="d-flex justify-content-center">
+															<button type="button" class="btn btn-outline-success"><i
+																	class="ri-information-line"></i></button>
+															<button type="button"
+																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
+																data-bs-toggle="dropdown" aria-haspopup="true"
+																aria-expanded="false" data-display="static">
+																<span class="sr-only"><i
+																		class="ri-settings-3-line"></i></span>
+															</button>
+															<div class="dropdown-menu">
+																<a class="dropdown-item" href="#">Edit</a>
+																<a class="dropdown-item" href="#">Delete</a>
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td class="token">1985</td>
+													<td><img class="cat-thumb" src="assets/img/clients/8.jpg"
+															alt="clients Image"><span class="name">Trinity info.</span>
+													</td>
+													<td>19/12/2021</td>
+													<td>Wiley Waites</td>
+													<td class="success">success</td>
+													<td>
+														<div class="d-flex justify-content-center">
+															<button type="button" class="btn btn-outline-success"><i
+																	class="ri-information-line"></i></button>
+															<button type="button"
+																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
+																data-bs-toggle="dropdown" aria-haspopup="true"
+																aria-expanded="false" data-display="static">
+																<span class="sr-only"><i
+																		class="ri-settings-3-line"></i></span>
+															</button>
+															<div class="dropdown-menu">
+																<a class="dropdown-item" href="#">Edit</a>
+																<a class="dropdown-item" href="#">Delete</a>
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td class="token">1945</td>
+													<td><img class="cat-thumb" src="assets/img/clients/9.jpg"
+															alt="clients Image"><span class="name">Miletone Gems.</span>
+													</td>
+													<td>06/05/2021</td>
+													<td>Sarah Moanees</td>
+													<td class="pending">pending</td>
+													<td>
+														<div class="d-flex justify-content-center">
+															<button type="button" class="btn btn-outline-success"><i
+																	class="ri-information-line"></i></button>
+															<button type="button"
+																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
+																data-bs-toggle="dropdown" aria-haspopup="true"
+																aria-expanded="false" data-display="static">
+																<span class="sr-only"><i
+																		class="ri-settings-3-line"></i></span>
+															</button>
+															<div class="dropdown-menu">
+																<a class="dropdown-item" href="#">Edit</a>
+																<a class="dropdown-item" href="#">Delete</a>
+															</div>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td class="token">1865</td>
+													<td><img class="cat-thumb" src="assets/img/clients/10.jpg"
+															alt="clients Image"><span class="name">Lightbeam Pvt.</span>
+													</td>
+													<td>01/01/2021</td>
+													<td>Anne Ortha</td>
+													<td class="active">ACTIVE</td>
+													<td>
+														<div class="d-flex justify-content-center">
+															<button type="button" class="btn btn-outline-success"><i
+																	class="ri-information-line"></i></button>
+															<button type="button"
+																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
+																data-bs-toggle="dropdown" aria-haspopup="true"
+																aria-expanded="false" data-display="static">
+																<span class="sr-only"><i
+																		class="ri-settings-3-line"></i></span>
+															</button>
+															<div class="dropdown-menu">
+																<a class="dropdown-item" href="#">Edit</a>
+																<a class="dropdown-item" href="#">Delete</a>
+															</div>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+{% endblock body %}
