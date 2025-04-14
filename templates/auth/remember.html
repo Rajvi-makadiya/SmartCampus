@@ -38,26 +38,15 @@
 				<div class="content-detail">
 					<div class="main-info">
 						<div class="hero-container">
-							<!-- Login form -->
-							<form class="login-form" method="post">
-								<div class="imgcontainer">
-									<a href="#"><b> LMS - SmartCampus </b></a>
-								</div>
+							<!-- Forgot form -->
+							<form class="forgot-form" method="post">
 								<div class="input-control">
-									<input type="text" placeholder="Enter Username" name="uname"
-										required>
-									<span class="password-field-show">
-										<input type="password" placeholder="Enter Password"
-											name="password" class="password-field" value="" required>
-										<span data-toggle=".password-field"
-											class="fa fa-fw fa-eye field-icon toggle-password"></span>
-									</span>
-									<label class="label-container">Remember me
-										<input type="checkbox">
-										<span class="checkmark"></span>
-									</label>
-									<span class="psw"><a href="{{ url_for('forgot_password') }}" class="forgot-btn">Forgot
-											password?</a></span>
+									<div class="imgcontainer user">
+										<a href="../base.html"><b> LMS - SmartCampus </b></a>
+									</div>
+									<h6>John wilson</h6>
+									<p>Enter your password to login.</p>
+									<input type="password" placeholder="Enter Password" name="password" required>
 									<div class="login-btns">
 										<button type="submit">Login</button>
 									</div>
@@ -89,6 +78,7 @@
 	<script src="../../static/assets/js/vendor/moment.min.js"></script>
 	<script src="../../static/assets/js/vendor/daterangepicker.js"></script>
 	<script src="../../static/assets/js/vendor/date-range.js"></script>
+	
 
 	<!-- Main Custom -->
 	<script src="../../static/assets/js/main.js"></script>
