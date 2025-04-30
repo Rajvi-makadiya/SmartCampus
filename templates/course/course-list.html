@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="admin, dashboard, crm, analytics, ecommerce, team, vendor, ai chat bot, backend, panel">
+    <meta name="description" content="Finx - Best multipurpose admin dashboard template.">
+    <meta name="author" content="Maraviya Infotech">
+
+	<title>LMS - {% block title %} Course List {% endblock %}</title>
+
+	<!-- App favicon -->
+	<link rel="shortcut icon" href="../../static/assets/img/favicon/favicon.ico">
+
+	<!-- Icon CSS -->
+	<link href="../../static/assets/css/vendor/materialdesignicons.min.css" rel="stylesheet">
+	<link href="../../static/assets/css/vendor/remixicon.css" rel="stylesheet">
+
+	<!-- Vendor CSS -->
+	<link href='../../static/assets/css/vendor/datatables.bootstrap5.min.css' rel='stylesheet'>
+	<link href='../../static/assets/css/vendor/responsive.datatables.min.css' rel='stylesheet'>
+	<link href='../../static/assets/css/vendor/daterangepicker.css' rel='stylesheet'>
+	<link href="../../static/assets/css/vendor/simplebar.css" rel="stylesheet">
+	<link href="../../static/assets/css/vendor/bootstrap.min.css" rel="stylesheet">
+	<link href="../../static/assets/css/vendor/apexcharts.css" rel="stylesheet">
+	<link href="../../static/assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet">
+
+	<!-- Main CSS -->
+	<link id="mainCss" href="../../static/assets/css/style.css" rel="stylesheet">
+{% block headerLink %}{% endblock %}
+</head>
+
+<body data-fx-mode="light">
+	<main class="wrapper sb-default">
+		<!-- Loader -->
+		<div id="fx-overlay">
+			<div class="fx-ellipsis">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+
+		<!-- Header -->
+		{%  include 'layout/header.html' %}
+
+		<!-- sidebar -->
+		{%  include 'layout/sidebar.html' %}
+
+		<!-- Notify sidebar -->
+		<div class="fx-notif/y-bar-overlay"></div>
+		<div class="fx-notify-bar">
+			<div class="fx-bar-title">
+				<h6>Notifications<span class="label">12</span></h6>
+				<a href="javascript:void(0)" class="close-notify"><i class="ri-close-line"></i></a>
+			</div>
+			<div class="fx-bar-content">
+				<ul class="nav nav-tabs" id="myTab" role="tablist">
+					<li class="nav-item" role="presentation">
+						<button class="nav-link active" id="alert-tab" data-bs-toggle="tab" data-bs-target="#alert"
+							type="button" role="tab" aria-controls="alert" aria-selected="true">Alert</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages"
+							type="button" role="tab" aria-controls="messages" aria-selected="false">Messages</button>
+					</li>
+					<li class="nav-item" role="presentation">
+						<button class="nav-link" id="log-tab" data-bs-toggle="tab" data-bs-target="#log" type="button"
+							role="tab" aria-controls="log" aria-selected="false">Log</button>
+					</li>
+				</ul>
+				<div class="tab-content" id="myTabContent">
+					<div class="tab-pane fade show active" id="alert" role="tabpanel" aria-labelledby="alert-tab">
+						<div class="fx-alert-list">
+							<ul>
+								<li>
+									<div class="icon fx-alert">
+										<i class="ri-alarm-warning-line"></i>
+									</div>
+									<div class="detail">
+										<div class="title">Your final report is overdue</div>
+										<p class="time">Just now</p>
+										<p class="message">Please submit your quarterly report before - June 15.</p>
+									</div>
+								</li>
+								<li>
+									<div class="icon fx-warn">
+										<i class="ri-error-warning-line"></i>
+									</div>
+									<div class="detail">
+										<div class="title">Your product campaign is stop!</div>
+										<p class="time">5:45AM - 25/05/2023</p>
+										<p class="message">Please submit your quarterly report before Jun 15.</p>
+									</div>
+								</li>
+								<li>
+									<div class="icon fx-success">
+										<i class="ri-check-double-line"></i>
+									</div>
+									<div class="detail">
+										<div class="title">Your payment is successfully processed</div>
+										<p class="time">9:20PM - 19/06/2023</p>
+										<p class="message">Check your account wallet. if there is any issue, create
+											support ticket.</p>
+									</div>
+								</li>
+								<li>
+									<div class="icon fx-warn">
+										<i class="ri-error-warning-line"></i>
+									</div>
+									<div class="detail">
+										<div class="title">Budget threshold exceeded!</div>
+										<p class="time">4:15AM - 01/04/2023</p>
+										<p class="message">Budget threshold was exceeded for project "finx" B612
+											elements.</p>
+									</div>
+								</li>
+								<li>
+									<div class="icon fx-warn">
+										<i class="ri-close-line"></i>
+									</div>
+									<div class="detail">
+										<div class="title">Project submission was decline!</div>
+										<p class="time">4:15AM - 01/04/2023</p>
+										<p class="message">Your project "B126" is declined by Theresa Mayeras.</p>
+									</div>
+								</li>
+								<li>
+									<div class="icon fx-success">
+										<i class="ri-check-double-line"></i>
+									</div>
+									<div class="detail">
+										<div class="title">Your payment is successfully processed</div>
+										<p class="time">9:20PM - 19/06/2023</p>
+										<p class="message">Check your account wallet. if there is any issue, create
+											support ticket.</p>
+									</div>
+								</li>
+								<li class="check"><a class="fx-primary-btn" href="chatapp.html">View all</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+						<div class="fx-message-list">
+							<ul>
+								<li>
+									<a href="chatapp.html" class="reply">Reply</a>
+									<div class="user">
+										<img src="../../static/assets/img/user/9.jpg" alt="user">
+										<span class="label online"></span>
+									</div>
+									<div class="detail">
+										<a href="chatapp.html" class="name">Boris Whisli</a>
+										<p class="time">5:30AM, Today</p>
+										<p class="message">Hello, I am sending some file. Please use this in landing
+											page. And make sure this all files are comppress.</p>
+										<span class="download-files">
+											<span class="download">
+												<img src="../../static/assets/img/other/1.jpg" alt="image">
+												<a href="javascript:void(0)"><i class="ri-download-2-line"></i></a>
+											</span>
+											<span class="download">
+												<img src="../../static/assets/img/other/2.jpg" alt="image">
+												<a href="javascript:void(0)"><i class="ri-download-2-line"></i></a>
+											</span>
+											<span class="download">
+												<span class="file">
+													<i class="ri-file-ppt-line"></i>
+												</span>
+												<a href="javascript:void(0)"><i class="ri-download-2-line"></i></a>
+											</span>
+										</span>
+									</div>
+								</li>
+								<li>
+									<a href="chatapp.html" class="reply">Reply</a>
+									<div class="user">
+										<img src="../../static/assets/img/user/8.jpg" alt="user">
+										<span class="label offline"></span>
+									</div>
+									<div class="detail">
+										<a href="chatapp.html" class="name">Frank N. Stein</a>
+										<p class="time">8:30PM, 05/12/2023</p>
+										<p class="message">Please take a look on landing page. There is some bus to open
+											popup model. and save form data.</p>
+									</div>
+								</li>
+								<li>
+									<a href="chatapp.html" class="reply">Reply</a>
+									<div class="user">
+										<img src="../../static/assets/img/user/7.jpg" alt="user">
+										<span class="label busy"></span>
+									</div>
+									<div class="detail">
+										<a href="chatapp.html" class="name">Frank N. Stein</a>
+										<p class="time">8:30PM, 05/12/2023</p>
+										<p class="message">Please take a look on landing page. There is some bus to open
+											popup model. and save form data.</p>
+										<span class="download-files">
+											<span class="download">
+												<span class="file">
+													<i class="ri-file-zip-line"></i>
+												</span>
+												<a href="javascript:void(0)"><i class="ri-download-2-line"></i></a>
+											</span>
+											<span class="download">
+												<span class="file">
+													<i class="ri-file-text-line"></i>
+												</span>
+												<a href="javascript:void(0)"><i class="ri-download-2-line"></i></a>
+											</span>
+											<span class="download">
+												<span class="file">
+													<i class="ri-file-ppt-line"></i>
+												</span>
+												<a href="javascript:void(0)"><i class="ri-download-2-line"></i></a>
+											</span>
+										</span>
+									</div>
+								</li>
+								<li>
+									<a href="chatapp.html" class="reply">Reply</a>
+									<div class="user">
+										<img src="../../static/assets/img/user/6.jpg" alt="user">
+										<span class="label busy"></span>
+									</div>
+									<div class="detail">
+										<a href="chatapp.html" class="name">Paige Turner</a>
+										<p class="time">4:30PM, 12/12/2023</p>
+										<p class="message">Landing page issues are done. and now i am working on admin
+											user module.</p>
+									</div>
+								</li>
+								<li>
+									<a href="chatapp.html" class="reply">Reply</a>
+									<div class="user">
+										<img src="../../static/assets/img/user/5.jpg" alt="user">
+										<span class="label busy"></span>
+									</div>
+									<div class="detail">
+										<a href="chatapp.html" class="name">Allie Grater</a>
+										<p class="time">8:30PM, 05/12/2023</p>
+										<p class="message">Take marketing module task.</p>
+									</div>
+								</li>
+								<li class="check"><a class="fx-primary-btn" href="chatapp.html">View all</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="log" role="tabpanel" aria-labelledby="log-tab">
+						<div class="fx-activity-list activity-list">
+							<ul>
+								<li>
+									<span class="date-time">8 Thu<span class="time">11:30 AM - 05:10 PM
+										</span></span>
+									<p class="title">Project Submitted from Smith</p>
+									<p class="detail">Lorem Ipsum is simply dummy text of the printing and
+										lorem is typesetting industry.</p>
+									<span class="download-files">
+										<span class="download">
+											<img src="../../static/assets/img/other/1.jpg" alt="image">
+											<a href="javascript:void(0)"><i class="ri-download-2-line"></i></a>
+										</span>
+										<span class="download">
+											<img src="../../static/assets/img/other/2.jpg" alt="image">
+											<a href="javascript:void(0)"><i class="ri-download-2-line"></i></a>
+										</span>
+										<span class="download">
+											<span class="file">
+												<i class="ri-file-ppt-line"></i>
+											</span>
+											<a href="javascript:void(0)"><i class="ri-download-2-line"></i></a>
+										</span>
+									</span>
+								</li>
+								<li>
+									<span class="date-time warn">7 Wed<span class="time">1:30 PM - 02:30 PM
+										</span></span>
+									<p class="title">Morgus pvt - project due</p>
+									<p class="detail">Project modul delay for some bugs.</p>
+									<span class="download-files">
+										<span class="download">
+											<span class="file">
+												<i class="ri-file-zip-line"></i>
+											</span>
+											<a href="javascript:void(0)"><i class="ri-download-2-line"></i></a>
+										</span>
+										<span class="download">
+											<span class="file">
+												<i class="ri-file-text-line"></i>
+											</span>
+											<a href="javascript:void(0)"><i class="ri-download-2-line"></i></a>
+										</span>
+										<span class="download">
+											<img src="../../static/assets/img/other/3.jpg" alt="image">
+											<a href="javascript:void(0)"><i class="ri-download-2-line"></i></a>
+										</span>
+									</span>
+								</li>
+								<li>
+									<span class="date-time">6 Tue<span class="time">9:30 AM - 11:00 AM
+										</span></span>
+									<p class="title">Interview for management dept.</p>
+									<p class="detail">There are many variations of passages of Lorem Ipsum
+										available, but the majority have suffered alteration in some form,
+										by injected humour.</p>
+									<span class="download-files">
+										<span class="download">
+											<span class="file">
+												<i class="ri-file-zip-line"></i>
+											</span>
+											<a href="javascript:void(0)"><i class="ri-download-2-line"></i></a>
+										</span>
+										<span class="download">
+											<span class="file">
+												<i class="ri-file-text-line"></i>
+											</span>
+											<a href="javascript:void(0)"><i class="ri-download-2-line"></i></a>
+										</span>
+										<span class="download">
+											<span class="file">
+												<i class="ri-file-ppt-line"></i>
+											</span>
+											<a href="javascript:void(0)"><i class="ri-download-2-line"></i></a>
+										</span>
+									</span>
+								</li>
+								<li>
+									<span class="date-time">5 Mon<span class="time">3:30 AM - 4:00 PM
+										</span></span>
+									<p class="title">Meeting with mr. Ken doe</p>
+									<p class="detail">The majority have suffered alteration in some form,
+										by injected humour.</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- main content -->
+		<div class="fx-main-content team-list">
+			<div class="container-fluid">
+				<!-- Page title & breadcrumb -->
+				<div class="fx-page-title fx-page-title-2">
+					<div class="fx-breadcrumb">
+						<h5>Course List</h5>
+						<ul>
+							<li><a href="/admin/dashboard">LMS</a></li>
+							<li>Course List</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xxl-4 col-lg-5 col-md-12">
+						<div class="team-sticky-bar">
+							<div class="fx-card">
+								<div class="fx-card-header">
+									<h4 class="fx-card-title">Course List</h4>
+									<div class="header-tools">
+										<div class="dropdown" title="Add Course">
+                                            <a href="/course/add-course" class="btn btn-secondary dropdown-toggle"><i
+											class="ri-add-line"></i></a>
+{#											<ul class="dropdown-menu">#}
+{#												<li><button class="dropdown-item" type="button">Add</button></li>#}
+{#												<li><button class="dropdown-item" type="button">Setting</button></li>#}
+{#											</ul>#}
+										</div>
+									</div>
+								</div>
+								<div class="fx-card-content">
+									<ul class="nav nav-tabs" role="tablist">
+										<li class="nav-item" role="presentation">
+											<a class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab1" role="tab" aria-selected="true">
+												<div class="form-group">
+{#													<img class="team-img" src="../../static/assets/img/user/1.jpg" alt="team">#}
+													<span>Bachelor of Arts</span>
+												</div>
+											</a>
+											<div class="fx-tool">
+												<div class="dropdown">
+													<button class="btn btn-secondary dropdown-toggle" type="button"
+														 data-bs-toggle="dropdown"
+														aria-expanded="false">
+														<i class="mdi mdi-dots-vertical"></i>
+													</button>
+													<ul class="dropdown-menu">
+														<li><button class="dropdown-item" type="button">Add Subject</button>
+														</li>
+														<li><button class="dropdown-item" type="button">Rename</button>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="nav-item" role="presentation">
+											<a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab2" role="tab" aria-selected="true">
+												<div class="form-group">
+{#													<img class="team-img" src="../../static/assets/img/user/2.jpg" alt="team">#}
+													<span>Bachelor of Science</span>
+												</div>
+											</a>
+											<div class="fx-tool">
+												<div class="dropdown">
+													<button class="btn btn-secondary dropdown-toggle" type="button"
+														 data-bs-toggle="dropdown"
+														aria-expanded="false">
+														<i class="mdi mdi-dots-vertical"></i>
+													</button>
+													<ul class="dropdown-menu">
+														<li><button class="dropdown-item" type="button">Add Subject</button>
+														</li>
+														<li><button class="dropdown-item" type="button">Rename</button>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="nav-item" role="presentation">
+											<a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab9" role="tab" aria-selected="true">
+												<div class="form-group">
+{#													<img class="team-img" src="../../static/assets/img/user/9.jpg" alt="team">#}
+													<span>Bachelor of Technology</span>
+												</div>
+											</a>
+											<div class="fx-tool">
+												<div class="dropdown">
+													<button class="btn btn-secondary dropdown-toggle" type="button"
+														 data-bs-toggle="dropdown"
+														aria-expanded="false">
+														<i class="mdi mdi-dots-vertical"></i>
+													</button>
+													<ul class="dropdown-menu">
+														<li><button class="dropdown-item" type="button">Add Subject</button>
+														</li>
+														<li><button class="dropdown-item" type="button">Rename</button>
+														</li>
+
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="nav-item" role="presentation">
+											<a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab10" role="tab" aria-selected="true">
+												<div class="form-group">
+{#													<img class="team-img" src="../../static/assets/img/user/10.jpg" alt="team">#}
+													<span>Bachelor of Business Administration</span>
+												</div>
+											</a>
+											<div class="fx-tool">
+												<div class="dropdown">
+													<button class="btn btn-secondary dropdown-toggle" type="button"
+														 data-bs-toggle="dropdown"
+														aria-expanded="false">
+														<i class="mdi mdi-dots-vertical"></i>
+													</button>
+													<ul class="dropdown-menu">
+														<li><button class="dropdown-item" type="button">Add Subject</button>
+														</li>
+														<li><button class="dropdown-item" type="button">Rename</button>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+{#					<div class="col-xxl-8 col-lg-7 col-md-12">#}
+{#						<div class="fx-card" id="assigntbl">#}
+{#							<div class="fx-card-header">#}
+{#								<h4 class="fx-card-title">Team Detail</h4>#}
+{#								<div class="header-tools">#}
+{#									<a href="javascript:void(0)" class="button-add" title="Add Task"><i#}
+{#											class="ri-add-line"></i>Task</a>#}
+{#								</div>#}
+{#							</div>#}
+{#							<div class="fx-card-content card-default">#}
+{#								<div class="tab-content">#}
+{#									<div class="tab-pane fade show active" id="tab1" role="tabpanel">#}
+{#										<div class="team-overview">#}
+{#											<div class="team-details fx-card-team-content">#}
+{#												<div class="row">#}
+{#													<div class="col-xxl-3 col-xl-6">#}
+{#														<div class="fx-card">#}
+{#															<div class="fx-card-content label-card">#}
+{#																<div class="title">#}
+{#																	<div class="growth-numbers">#}
+{#																		<h4>Tickets</h4>#}
+{#																		<h5>15</h5>#}
+{#																	</div>#}
+{#																	<span class="icon"><i#}
+{#																			class="ri-ticket-line"></i></span>#}
+{#																</div>#}
+{#															</div>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-3 col-xl-6">#}
+{#														<div class="fx-card">#}
+{#															<div class="fx-card-content label-card">#}
+{#																<div class="title">#}
+{#																	<div class="growth-numbers">#}
+{#																		<h4>Task</h4>#}
+{#																		<h5>21</h5>#}
+{#																	</div>#}
+{#																	<span class="icon"><i class="ri-task-line"></i>#}
+{#																	</span>#}
+{#																</div>#}
+{#															</div>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-3 col-xl-6">#}
+{#														<div class="fx-card">#}
+{#															<div class="fx-card-content label-card">#}
+{#																<div class="title">#}
+{#																	<div class="growth-numbers">#}
+{#																		<h4>Project</h4>#}
+{#																		<h5>6</h5>#}
+{#																	</div>#}
+{#																	<span class="icon"><i#}
+{#																			class="ri-article-line"></i></span>#}
+{#																</div>#}
+{#															</div>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-3 col-xl-6">#}
+{#														<div class="fx-card">#}
+{#															<div class="fx-card-content label-card">#}
+{#																<div class="title">#}
+{#																	<div class="growth-numbers">#}
+{#																		<h4>Lead</h4>#}
+{#																		<h5>17</h5>#}
+{#																	</div>#}
+{#																	<span class="icon"><i#}
+{#																			class="ri-book-mark-line"></i></span>#}
+{#																</div>#}
+{#															</div>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>E-mail address</h6>#}
+{#															<ul>#}
+{#																<li><strong>Email 1 : </strong>support1@exapmle.com</li>#}
+{#																<li><strong>Email 2 : </strong>support2@exapmle.com</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Contact nubmer</h6>#}
+{#															<ul>#}
+{#																<li><strong>Phone Nubmer 1 : </strong>(123) 123 456 7890#}
+{#																</li>#}
+{#																<li><strong>Phone Nubmer 2 : </strong>(123) 123 456 7890#}
+{#																</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Address</h6>#}
+{#															<ul>#}
+{#																<li>123, 2150 Sycamore Street, dummy text of#}
+{#																	the, bara cota San Jose, California - 95131.</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Address 2</h6>#}
+{#															<ul>#}
+{#																<li>123, 2150 Sycamore Street, dummy text of#}
+{#																	the, bara cota San Jose, California - 95131.</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Bank Accounts</h6>#}
+{#															<ul>#}
+{#																<li><strong>Account Name : </strong>Wiley Waites</li>#}
+{#																<li><strong>Account Nubmer : </strong>123**********80#}
+{#																</li>#}
+{#																<li><strong>IFSC Code : </strong>123**********80</li>#}
+{#																<li><strong>Bank name : </strong>Barky Central Bank</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Social media</h6>#}
+{#															<ul>#}
+{#																<li><strong><i class="ri-facebook-line"></i> </strong><a#}
+{#																		href="#">https://www.facebook.com/youraccount</a>#}
+{#																</li>#}
+{#																<li><strong><i class="ri-twitter-line"></i> </strong><a#}
+{#																		href="#">https://twitter.com/youraccount</a>#}
+{#																</li>#}
+{#																<li><strong><i class="ri-linkedin-line"></i> </strong><a#}
+{#																		href="#">https://in.linkedin.com/youraccount</a>#}
+{#																</li>#}
+{#																<li><strong><i class="ri-github-line"></i> </strong><a#}
+{#																		href="#">https://github.com/youraccount</a></li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Payment</h6>#}
+{#															<ul>#}
+{#																<li><strong>Paypal : </strong>support1@exapmle.com</li>#}
+{#																<li><strong>Payoneer : </strong>support2@exapmle.com#}
+{#																</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Tax Info</h6>#}
+{#															<ul>#}
+{#																<li><strong>TIN NO : </strong>SDF5***********5F</li>#}
+{#																<li><strong>Tax ID Number : </strong>6582***********523#}
+{#																</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#												</div>#}
+{#											</div>#}
+{#										</div>#}
+{#									</div>#}
+{#									<div class="tab-pane fade" id="tab2" role="tabpanel">#}
+{#										<div class="team-overview">#}
+{#											<div class="team-details fx-card-team-content">#}
+{#												<div class="row">#}
+{#													<div class="col-xxl-3 col-xl-6">#}
+{#														<div class="fx-card">#}
+{#															<div class="fx-card-content label-card">#}
+{#																<div class="title">#}
+{#																	<div class="growth-numbers">#}
+{#																		<h4>Tickets</h4>#}
+{#																		<h5>17</h5>#}
+{#																	</div>#}
+{#																	<span class="icon"><i#}
+{#																			class="ri-ticket-line"></i></span>#}
+{#																</div>#}
+{#															</div>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-3 col-xl-6">#}
+{#														<div class="fx-card">#}
+{#															<div class="fx-card-content label-card">#}
+{#																<div class="title">#}
+{#																	<div class="growth-numbers">#}
+{#																		<h4>Task</h4>#}
+{#																		<h5>29</h5>#}
+{#																	</div>#}
+{#																	<span class="icon"><i class="ri-task-line"></i>#}
+{#																	</span>#}
+{#																</div>#}
+{#															</div>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-3 col-xl-6">#}
+{#														<div class="fx-card">#}
+{#															<div class="fx-card-content label-card">#}
+{#																<div class="title">#}
+{#																	<div class="growth-numbers">#}
+{#																		<h4>Project</h4>#}
+{#																		<h5>8</h5>#}
+{#																	</div>#}
+{#																	<span class="icon"><i#}
+{#																			class="ri-article-line"></i></span>#}
+{#																</div>#}
+{#															</div>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-3 col-xl-6">#}
+{#														<div class="fx-card">#}
+{#															<div class="fx-card-content label-card">#}
+{#																<div class="title">#}
+{#																	<div class="growth-numbers">#}
+{#																		<h4>Lead</h4>#}
+{#																		<h5>26</h5>#}
+{#																	</div>#}
+{#																	<span class="icon"><i#}
+{#																			class="ri-book-mark-line"></i></span>#}
+{#																</div>#}
+{#															</div>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>E-mail address</h6>#}
+{#															<ul>#}
+{#																<li><strong>Email 1 : </strong>support1@exapmle.com</li>#}
+{#																<li><strong>Email 2 : </strong>support2@exapmle.com</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Contact nubmer</h6>#}
+{#															<ul>#}
+{#																<li><strong>Phone Nubmer 1 : </strong>(123) 123 456 7890#}
+{#																</li>#}
+{#																<li><strong>Phone Nubmer 2 : </strong>(123) 123 456 7890#}
+{#																</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Address</h6>#}
+{#															<ul>#}
+{#																<li>123, 2150 Sycamore Street, dummy text of#}
+{#																	the, bara cota San Jose, California - 95131.</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Address 2</h6>#}
+{#															<ul>#}
+{#																<li>123, 2150 Sycamore Street, dummy text of#}
+{#																	the, bara cota San Jose, California - 95131.</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Bank Accounts</h6>#}
+{#															<ul>#}
+{#																<li><strong>Account Name : </strong>Wiley Waites</li>#}
+{#																<li><strong>Account Nubmer : </strong>123**********80#}
+{#																</li>#}
+{#																<li><strong>IFSC Code : </strong>123**********80</li>#}
+{#																<li><strong>Bank name : </strong>Barky Central Bank</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Social media</h6>#}
+{#															<ul>#}
+{#																<li><strong><i class="ri-facebook-line"></i> </strong><a#}
+{#																		href="#">https://www.facebook.com/youraccount</a>#}
+{#																</li>#}
+{#																<li><strong><i class="ri-twitter-line"></i> </strong><a#}
+{#																		href="#">https://twitter.com/youraccount</a>#}
+{#																</li>#}
+{#																<li><strong><i class="ri-linkedin-line"></i> </strong><a#}
+{#																		href="#">https://in.linkedin.com/youraccount</a>#}
+{#																</li>#}
+{#																<li><strong><i class="ri-github-line"></i> </strong><a#}
+{#																		href="#">https://github.com/youraccount</a></li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Payment</h6>#}
+{#															<ul>#}
+{#																<li><strong>Paypal : </strong>support1@exapmle.com</li>#}
+{#																<li><strong>Payoneer : </strong>support2@exapmle.com#}
+{#																</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Tax Info</h6>#}
+{#															<ul>#}
+{#																<li><strong>TIN NO : </strong>SDF5***********5F</li>#}
+{#																<li><strong>Tax ID Number : </strong>6582***********523#}
+{#																</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#												</div>#}
+{#											</div>#}
+{#										</div>#}
+{#									</div>#}
+{#									<div class="tab-pane fade" id="tab9" role="tabpanel">#}
+{#										<div class="team-overview">#}
+{#											<div class="team-details fx-card-team-content">#}
+{#												<div class="row">#}
+{#													<div class="col-xxl-3 col-xl-6">#}
+{#														<div class="fx-card">#}
+{#															<div class="fx-card-content label-card">#}
+{#																<div class="title">#}
+{#																	<div class="growth-numbers">#}
+{#																		<h4>Tickets</h4>#}
+{#																		<h5>65</h5>#}
+{#																	</div>#}
+{#																	<span class="icon"><i#}
+{#																			class="ri-ticket-line"></i></span>#}
+{#																</div>#}
+{#															</div>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-3 col-xl-6">#}
+{#														<div class="fx-card">#}
+{#															<div class="fx-card-content label-card">#}
+{#																<div class="title">#}
+{#																	<div class="growth-numbers">#}
+{#																		<h4>Task</h4>#}
+{#																		<h5>48</h5>#}
+{#																	</div>#}
+{#																	<span class="icon"><i class="ri-task-line"></i>#}
+{#																	</span>#}
+{#																</div>#}
+{#															</div>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-3 col-xl-6">#}
+{#														<div class="fx-card">#}
+{#															<div class="fx-card-content label-card">#}
+{#																<div class="title">#}
+{#																	<div class="growth-numbers">#}
+{#																		<h4>Project</h4>#}
+{#																		<h5>65</h5>#}
+{#																	</div>#}
+{#																	<span class="icon"><i#}
+{#																			class="ri-article-line"></i></span>#}
+{#																</div>#}
+{#															</div>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-3 col-xl-6">#}
+{#														<div class="fx-card">#}
+{#															<div class="fx-card-content label-card">#}
+{#																<div class="title">#}
+{#																	<div class="growth-numbers">#}
+{#																		<h4>Lead</h4>#}
+{#																		<h5>82</h5>#}
+{#																	</div>#}
+{#																	<span class="icon"><i#}
+{#																			class="ri-book-mark-line"></i></span>#}
+{#																</div>#}
+{#															</div>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>E-mail address</h6>#}
+{#															<ul>#}
+{#																<li><strong>Email 1 : </strong>support1@exapmle.com</li>#}
+{#																<li><strong>Email 2 : </strong>support2@exapmle.com</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Contact nubmer</h6>#}
+{#															<ul>#}
+{#																<li><strong>Phone Nubmer 1 : </strong>(123) 123 456 7890#}
+{#																</li>#}
+{#																<li><strong>Phone Nubmer 2 : </strong>(123) 123 456 7890#}
+{#																</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Address</h6>#}
+{#															<ul>#}
+{#																<li>123, 2150 Sycamore Street, dummy text of#}
+{#																	the, bara cota San Jose, California - 95131.</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Address 2</h6>#}
+{#															<ul>#}
+{#																<li>123, 2150 Sycamore Street, dummy text of#}
+{#																	the, bara cota San Jose, California - 95131.</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Bank Accounts</h6>#}
+{#															<ul>#}
+{#																<li><strong>Account Name : </strong>Wiley Waites</li>#}
+{#																<li><strong>Account Nubmer : </strong>123**********80#}
+{#																</li>#}
+{#																<li><strong>IFSC Code : </strong>123**********80</li>#}
+{#																<li><strong>Bank name : </strong>Barky Central Bank</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Social media</h6>#}
+{#															<ul>#}
+{#																<li><strong><i class="ri-facebook-line"></i> </strong><a#}
+{#																		href="#">https://www.facebook.com/youraccount</a>#}
+{#																</li>#}
+{#																<li><strong><i class="ri-twitter-line"></i> </strong><a#}
+{#																		href="#">https://twitter.com/youraccount</a>#}
+{#																</li>#}
+{#																<li><strong><i class="ri-linkedin-line"></i> </strong><a#}
+{#																		href="#">https://in.linkedin.com/youraccount</a>#}
+{#																</li>#}
+{#																<li><strong><i class="ri-github-line"></i> </strong><a#}
+{#																		href="#">https://github.com/youraccount</a></li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Payment</h6>#}
+{#															<ul>#}
+{#																<li><strong>Paypal : </strong>support1@exapmle.com</li>#}
+{#																<li><strong>Payoneer : </strong>support2@exapmle.com#}
+{#																</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Tax Info</h6>#}
+{#															<ul>#}
+{#																<li><strong>TIN NO : </strong>SDF5***********5F</li>#}
+{#																<li><strong>Tax ID Number : </strong>6582***********523#}
+{#																</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#												</div>#}
+{#											</div>#}
+{#										</div>#}
+{#									</div>#}
+{#									<div class="tab-pane fade" id="tab10" role="tabpanel">#}
+{#										<div class="team-overview">#}
+{#											<div class="team-details fx-card-team-content">#}
+{#												<div class="row">#}
+{#													<div class="col-xxl-3 col-xl-6">#}
+{#														<div class="fx-card">#}
+{#															<div class="fx-card-content label-card">#}
+{#																<div class="title">#}
+{#																	<div class="growth-numbers">#}
+{#																		<h4>Tickets</h4>#}
+{#																		<h5>25</h5>#}
+{#																	</div>#}
+{#																	<span class="icon"><i#}
+{#																			class="ri-ticket-line"></i></span>#}
+{#																</div>#}
+{#															</div>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-3 col-xl-6">#}
+{#														<div class="fx-card">#}
+{#															<div class="fx-card-content label-card">#}
+{#																<div class="title">#}
+{#																	<div class="growth-numbers">#}
+{#																		<h4>Task</h4>#}
+{#																		<h5>51</h5>#}
+{#																	</div>#}
+{#																	<span class="icon"><i class="ri-task-line"></i>#}
+{#																	</span>#}
+{#																</div>#}
+{#															</div>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-3 col-xl-6">#}
+{#														<div class="fx-card">#}
+{#															<div class="fx-card-content label-card">#}
+{#																<div class="title">#}
+{#																	<div class="growth-numbers">#}
+{#																		<h4>Project</h4>#}
+{#																		<h5>65</h5>#}
+{#																	</div>#}
+{#																	<span class="icon"><i#}
+{#																			class="ri-article-line"></i></span>#}
+{#																</div>#}
+{#															</div>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-3 col-xl-6">#}
+{#														<div class="fx-card">#}
+{#															<div class="fx-card-content label-card">#}
+{#																<div class="title">#}
+{#																	<div class="growth-numbers">#}
+{#																		<h4>Lead</h4>#}
+{#																		<h5>84</h5>#}
+{#																	</div>#}
+{#																	<span class="icon"><i#}
+{#																			class="ri-book-mark-line"></i></span>#}
+{#																</div>#}
+{#															</div>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>E-mail address</h6>#}
+{#															<ul>#}
+{#																<li><strong>Email 1 : </strong>support1@exapmle.com</li>#}
+{#																<li><strong>Email 2 : </strong>support2@exapmle.com</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Contact nubmer</h6>#}
+{#															<ul>#}
+{#																<li><strong>Phone Nubmer 1 : </strong>(123) 123 456 7890#}
+{#																</li>#}
+{#																<li><strong>Phone Nubmer 2 : </strong>(123) 123 456 7890#}
+{#																</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Address</h6>#}
+{#															<ul>#}
+{#																<li>123, 2150 Sycamore Street, dummy text of#}
+{#																	the, bara cota San Jose, California - 95131.</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Address 2</h6>#}
+{#															<ul>#}
+{#																<li>123, 2150 Sycamore Street, dummy text of#}
+{#																	the, bara cota San Jose, California - 95131.</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Bank Accounts</h6>#}
+{#															<ul>#}
+{#																<li><strong>Account Name : </strong>Wiley Waites</li>#}
+{#																<li><strong>Account Nubmer : </strong>123**********80#}
+{#																</li>#}
+{#																<li><strong>IFSC Code : </strong>123**********80</li>#}
+{#																<li><strong>Bank name : </strong>Barky Central Bank</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Social media</h6>#}
+{#															<ul>#}
+{#																<li><strong><i class="ri-facebook-line"></i> </strong><a#}
+{#																		href="#">https://www.facebook.com/youraccount</a>#}
+{#																</li>#}
+{#																<li><strong><i class="ri-twitter-line"></i> </strong><a#}
+{#																		href="#">https://twitter.com/youraccount</a>#}
+{#																</li>#}
+{#																<li><strong><i class="ri-linkedin-line"></i> </strong><a#}
+{#																		href="#">https://in.linkedin.com/youraccount</a>#}
+{#																</li>#}
+{#																<li><strong><i class="ri-github-line"></i> </strong><a#}
+{#																		href="#">https://github.com/youraccount</a></li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Payment</h6>#}
+{#															<ul>#}
+{#																<li><strong>Paypal : </strong>support1@exapmle.com</li>#}
+{#																<li><strong>Payoneer : </strong>support2@exapmle.com#}
+{#																</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#													<div class="col-xxl-6 col-lg-12 col-md-6 col-sm-12">#}
+{#														<div class="fx-team-detail">#}
+{#															<h6>Tax Info</h6>#}
+{#															<ul>#}
+{#																<li><strong>TIN NO : </strong>SDF5***********5F</li>#}
+{#																<li><strong>Tax ID Number : </strong>6582***********523#}
+{#																</li>#}
+{#															</ul>#}
+{#														</div>#}
+{#													</div>#}
+{#												</div>#}
+{#											</div>#}
+{#										</div>#}
+{#									</div>#}
+{#								</div>#}
+{#							</div>#}
+{#						</div>#}
+{#					</div>#}
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		{%  include 'layout/footer.html' %}
+
+		<!-- Feature tools -->
+		<div class="fx-tools-sidebar-overlay"></div>
+		<div class="fx-tools-sidebar">
+			<a href="javascript:void(0)" class="fx-tools-sidebar-toggle in-out">
+				<i class="ri-settings-4-line"></i>
+			</a>
+			<div class="fx-bar-title">
+				<h6>Tools</h6>
+				<a href="javascript:void(0)" class="close-tools"><i class="ri-close-line"></i></a>
+			</div>
+			<div class="fx-tools-detail">
+				<div class="fx-tools-block">
+					<h3>Modes</h3>
+					<div class="fx-tools-info">
+						<div class="fx-tools-item mode active" data-fx-mode-tool="light">
+							<img src="../../static/assets/img/tools/light.png" alt="light">
+							<p>light</p>
+						</div>
+						<div class="fx-tools-item mode" data-fx-mode-tool="dark">
+							<img src="../../static/assets/img/tools/dark.png" alt="dark">
+							<p>dark</p>
+						</div>
+					</div>
+				</div>
+				<div class="fx-tools-block">
+					<h3>Sidebar</h3>
+					<div class="fx-tools-info">
+						<div class="fx-tools-item sidebar active" data-sidebar-mode-tool="light">
+							<img src="../../static/assets/img/tools/side-light.png" alt="light">
+							<p>light</p>
+						</div>
+						<div class="fx-tools-item sidebar" data-sidebar-mode-tool="dark">
+							<img src="../../static/assets/img/tools/side-dark.png" alt="dark">
+							<p>dark</p>
+						</div>
+						<div class="fx-tools-item sidebar" data-sidebar-mode-tool="bg-1">
+							<img src="../../static/assets/img/tools/side-bg-1.png" alt="background">
+							<p>Bg-1</p>
+						</div>
+						<div class="fx-tools-item sidebar" data-sidebar-mode-tool="bg-2">
+							<img src="../../static/assets/img/tools/side-bg-2.png" alt="background">
+							<p>Bg-2</p>
+						</div>
+						<div class="fx-tools-item sidebar" data-sidebar-mode-tool="bg-3">
+							<img src="../../static/assets/img/tools/side-bg-3.png" alt="background">
+							<p>Bg-3</p>
+						</div>
+						<div class="fx-tools-item sidebar" data-sidebar-mode-tool="bg-4">
+							<img src="../../static/assets/img/tools/side-bg-4.png" alt="background">
+							<p>Bg-4</p>
+						</div>
+					</div>
+				</div>
+				<div class="fx-tools-block">
+					<h3>Header</h3>
+					<div class="fx-tools-info">
+						<div class="fx-tools-item header active" data-header-mode="light">
+							<img src="../../static/assets/img/tools/header-light.png" alt="light">
+							<p>light</p>
+						</div>
+						<div class="fx-tools-item header" data-header-mode="dark">
+							<img src="../../static/assets/img/tools/header-dark.png" alt="dark">
+							<p>dark</p>
+						</div>
+					</div>
+				</div>
+				<div class="fx-tools-block">
+					<h3>Backgrounds</h3>
+					<div class="fx-tools-info">
+						<div class="fx-tools-item bg active" data-bg-mode="default">
+							<img src="../../static/assets/img/tools/bg-0.png" alt="default">
+							<p>Default</p>
+						</div>
+						<div class="fx-tools-item bg" data-bg-mode="bg-1">
+							<img src="../../static/assets/img/tools/bg-1.png" alt="bg-1">
+							<p>Bg-1</p>
+						</div>
+						<div class="fx-tools-item bg" data-bg-mode="bg-2">
+							<img src="../../static/assets/img/tools/bg-2.png" alt="bg-2">
+							<p>Bg-2</p>
+						</div>
+						<div class="fx-tools-item bg" data-bg-mode="bg-3">
+							<img src="../../static/assets/img/tools/bg-3.png" alt="bg-3">
+							<p>Bg-3</p>
+						</div>
+						<div class="fx-tools-item bg" data-bg-mode="bg-4">
+							<img src="../../static/assets/img/tools/bg-4.png" alt="bg-4">
+							<p>Bg-4</p>
+						</div>
+						<div class="fx-tools-item bg" data-bg-mode="bg-5">
+							<img src="../../static/assets/img/tools/bg-5.png" alt="bg-5">
+							<p>Bg-5</p>
+						</div>
+					</div>
+				</div>
+				<div class="fx-tools-block">
+					<h3>Box Design</h3>
+					<div class="fx-tools-info">
+						<div class="fx-tools-item box active" data-box-mode-tool="default">
+							<img src="../../static/assets/img/tools/box-0.png" alt="default">
+							<p>Default</p>
+						</div>
+						<div class="fx-tools-item box" data-box-mode-tool="box-1">
+							<img src="../../static/assets/img/tools/box-1.png" alt="box-1">
+							<p>Box-1</p>
+						</div>
+						<div class="fx-tools-item box" data-box-mode-tool="box-2">
+							<img src="../../static/assets/img/tools/box-2.png" alt="box-2">
+							<p>Box-2</p>
+						</div>
+						<div class="fx-tools-item box" data-box-mode-tool="box-3">
+							<img src="../../static/assets/img/tools/box-3.png" alt="box-3">
+							<p>Box-3</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<!-- Vendor Custom -->
+	<script src="../../static/assets/js/vendor/jquery-3.6.4.min.js"></script>
+	<script src="../../static/assets/js/vendor/simplebar.min.js"></script>
+	<script src="../../static/assets/js/vendor/bootstrap.bundle.min.js"></script>
+	<script src="../../static/assets/js/vendor/apexcharts.min.js"></script>
+	<script src="../../static/assets/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>
+	<script src="../../static/assets/js/vendor/jquery-jvectormap-world-mill-en.js"></script>
+	<!-- Data Tables -->
+	<script src='../../static/assets/js/vendor/jquery.datatables.min.js'></script>
+	<script src='../../static/assets/js/vendor/datatables.bootstrap5.min.js'></script>
+	<script src='../../static/assets/js/vendor/datatables.responsive.min.js'></script>
+	<!-- Caleddar -->
+	<script src="../../static/assets/js/vendor/jquery.simple-calendar.js"></script>
+	<!-- Date Range Picker -->
+	<script src="../../static/assets/js/vendor/moment.min.js"></script>
+	<script src="../../static/assets/js/vendor/daterangepicker.js"></script>
+	<script src="../../static/assets/js/vendor/date-range.js"></script>
+
+	<!-- Main Custom -->
+	<script src="../../static/assets/js/main.js"></script>
+{% block footerLink %}
+
+{% endblock %}
+</body>
+
+</html>

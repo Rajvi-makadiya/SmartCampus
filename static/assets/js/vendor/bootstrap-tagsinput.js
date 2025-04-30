@@ -131,7 +131,7 @@
 
       // add a tag element
 
-      var $tag = $('<span class="tag ' + htmlEncode(tagClass) + (itemTitle !== null ? ('" title="' + itemTitle) : '') + '">' + htmlEncode(itemText) + '<span data-role="remove"></span></span>');
+      var $tag = $('<span class="tag ' + htmlEncode(tagClass) + (itemTitle !== null ? ('" title="' + itemTitle) : '') + '">' + htmlEncode(itemText) + '<span data-course="remove"></span></span>');
       $tag.data('item', item);
       self.findInputWrapper().before($tag);
       $tag.after(' ');
@@ -453,7 +453,7 @@
       }, self));
 
       // Remove icon clicked
-      self.$container.on('click', '[data-role=remove]', $.proxy(function(event) {
+      self.$container.on('click', '[data-course=remove]', $.proxy(function(event) {
         if (self.$element.attr('disabled')) {
           return;
         }
@@ -480,7 +480,7 @@
 
       // Unbind events
       self.$container.off('keypress', 'input');
-      self.$container.off('click', '[role=remove]');
+      self.$container.off('click', '[course=remove]');
 
       self.$container.remove();
       self.$element.removeData('tagsinput');
@@ -638,9 +638,9 @@
 
   /**
    * Initialize tagsinput behaviour on inputs and selects which have
-   * data-role=tagsinput
+   * data-course=tagsinput
    */
   $(function() {
-    $("input[data-role=tagsinput], select[multiple][data-role=tagsinput]").tagsinput();
+    $("input[data-course=tagsinput], select[multiple][data-course=tagsinput]").tagsinput();
   });
 })(window.jQuery);

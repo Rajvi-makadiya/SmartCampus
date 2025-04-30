@@ -8,7 +8,7 @@
     <meta name="description" content="Finx - Best multipurpose admin dashboard template.">
     <meta name="author" content="Maraviya Infotech">
 
-	<title>LMS - {% block title %}{% endblock %}</title>
+	<title>LMS - {% block title %} Sign In{% endblock %}</title>
 
 	<!-- App favicon -->
 	<link rel="shortcut icon" href="../../static/assets/img/favicon/favicon.ico">
@@ -39,9 +39,9 @@
 					<div class="main-info">
 						<div class="hero-container">
 							<!-- Login form -->
-							<form class="login-form" method="post">
+							<form class="login-form" method="post" action="">
 								<div class="imgcontainer">
-									<a href="{{ url_for('home') }}"><b> LMS - SmartCampus </b></a>
+									<a href="/admin/dashboard"><b> LMS - SmartCampus </b></a>
 								</div>
 								<div class="input-control">
 									<input type="text" placeholder="Enter Username" name="uname"
@@ -56,7 +56,7 @@
 										<input type="checkbox">
 										<span class="checkmark"></span>
 									</label>
-									<span class="psw"><a href="{{ url_for('forgot_password') }}" class="forgot-btn">Forgot
+									<span class="psw"><a href="/auth/forgot-password" class="forgot-btn">Forgot
 											password?</a></span>
 									<div class="login-btns">
 										<button type="submit">Login</button>
