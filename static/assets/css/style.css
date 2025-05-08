@@ -4109,6 +4109,7 @@ table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_asc:af
 thead tr {
   background-color: rgba(72, 85, 104, 0.07);
   border-color: transparent;
+  text-align: center;
 }
 thead tr:first-child th:first-child {
   border-top-left-radius: 10px;
@@ -4184,6 +4185,10 @@ table.dataTable td {
   font-weight: 400;
   vertical-align: middle;
   text-transform: capitalize;
+  text-overflow: ellipsis;
+  overflow: hidden;
+    white-space: nowrap;
+    max-width: 100px;
 }
 table.dataTable td .btn-outline-success.dropdown-toggle.show:focus, table.dataTable td .btn-outline-success.dropdown-toggle.show:active, table.dataTable td .btn-group > :not(.btn-check) + .btn:focus, table.dataTable td .btn-group > :not(.btn-check) + .btn:active, table.dataTable td .btn-group > .btn:not(:last-child):not(.dropdown-toggle):focus, table.dataTable td .btn-group > .btn:not(:last-child):not(.dropdown-toggle):active {
   -webkit-box-shadow: none;
@@ -5671,7 +5676,7 @@ div.dataTables_wrapper div.dataTables_info {
 }
 
 .fx-team-detail {
-  padding-bottom: 30px;
+  padding-bottom: 0px;
 }
 
 .team-overview h3 {
