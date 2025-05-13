@@ -9579,4 +9579,50 @@ div.dataTables_wrapper div.dataTables_info {
 .crud-color-c.selected .crud-color:before {
   display: block;
 }
+
+.stock-green{
+      color: #198754;
+    background-color: #19875426;
+    border: none;
+    padding: 5px 12px;
+    font-weight: 500;
+  border-radius: 7px;
+  font-size: 11px;
+}
+.stock-purple{
+  color: #6f42c1;
+    background-color: #6f42c126;
+    border: none;
+    padding: 5px 12px;
+    font-weight: 500;
+  border-radius: 7px;
+  font-size: 11px;
+}
+.stock-blue{
+      color: #0d6efd;
+    background-color: #0d6efd26;
+    border: none;
+    padding: 5px 12px;
+    font-weight: 500;
+  border-radius: 7px;
+  font-size: 11px;
+}
+.stock-brown{
+  color: #964b00;
+    background-color: #964b0026;
+    border: none;
+    padding: 5px 12px;
+    font-weight: 500;
+  border-radius: 7px;
+  font-size: 11px;
+}
+.stock-orange{
+ color: #fd7e14;
+    background-color: #fd7e1426;
+    border: none;
+    padding: 5px 12px;
+    font-weight: 500;
+  border-radius: 7px;
+  font-size: 11px;
+}
 /*# sourceMappingURL=style.css.map */

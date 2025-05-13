@@ -8,7 +8,7 @@
     <meta name="description" content="Finx - Best multipurpose admin dashboard template.">
     <meta name="author" content="Maraviya Infotech">
 
-	<title>LMS - {% block title %} New Student {% endblock %}</title>
+	<title>LMS - {% block title %} New Library Assets {% endblock %}</title>
 
 	<!-- App favicon -->
 	<link rel="shortcut icon" href="../../static/assets/img/favicon/favicon.ico">
@@ -347,10 +347,10 @@
 				<!-- Page title & breadcrumb -->
 				<div class="fx-page-title fx-page-title-2">
 					<div class="fx-breadcrumb">
-						<h5>Add Student</h5>
+						<h5>Add New Assets</h5>
 						<ul>
 							<li><a href="/admin/dashboard">LMS</a></li>
-							<li> Add Student </li>
+							<li> Add New Assets </li>
 						</ul>
 					</div>
 				</div>
@@ -361,71 +361,30 @@
 								<div class="fx-card-content fx-card-team team-details">
 									<div class="row">
 										<div class="col-sm-12">
-											<h3>Personal Details</h3>
+											<h3>Assets Details</h3>
 										</div>
 										<div class="col-md-6 col-sm-12">
 											<div class="fx-team-detail">
 {#												<h6>E-mail address</h6>#}
 												<ul>
-													<li><strong>Enter name</strong>
+													<li><strong>Title :</strong>
                                                         <div class="form-group">
-														<input type="text" class="form-control" id="name">
-                                                        </div>
-													</li>
-													<li><strong>Enter email</strong>
-														<div class="form-group">
-															<input type="email" class="form-control" id="email">
-														</div>
-													</li>
-												</ul>
-											</div>
-										</div>
-										<div class="col-md-6 col-sm-12">
-											<div class="fx-team-detail">
-{#												<h6>Contact nubmer</h6>#}
-												<ul>
-													<li><strong>Mobile : </strong>
-														<div class="form-group">
-															<input type="number" class="form-control" id="mobile">
-														</div>
-													</li>
-													<li><strong>Gender : </strong>
-														<div class="form-group">
-                                                                <select class="form-control form-select">
-                                                                <option value="" disabled selected hidden>Select Gender</option>
-                                                                    <option value="male">Male</option>
-                                                                    <option value="female">Female</option>
-                                                                    <option value="other">Other</option>
-                                                            </select>
-                                                                </div>
-													</li>
-												</ul>
-											</div>
-										</div>
-										<div class="col-md-6 col-sm-12">
-											<div class="fx-team-detail">
-												<ul>
-													<li><strong>Enter address :</strong>
-                                                        <div class="form-group">
-														    <textarea class="form-control" id="address" rows="2"></textarea>
+														<input type="text" class="form-control" id="title">
                                                         </div>
 													</li>
 												</ul>
 											</div>
 										</div>
-										<div class="col-md-6 col-sm-12">
+                                        <div class="col-md-6 col-sm-12">
 											<div class="fx-team-detail">
 												<ul>
-													<li><strong>Date of Birth :</strong>
+													<li><strong> Subject : :</strong>
                                                         <div class="form-group">
-														    <input type="date" id="bdate" class="form-control">
+														    <input type="number" id="subject" class="form-control">
                                                         </div>
-                                                    </li>
+													</li>
 												</ul>
 											</div>
-										</div>
-                                        <div class="col-sm-12" style="padding-top: 30px;">
-											<h3>College Details</h3>
 										</div>
                                             <div class="col-md-6 col-sm-12">
                                                 <div class="fx-team-detail">
@@ -447,9 +406,9 @@
                                             <div class="col-md-6 col-sm-12">
                                                 <div class="fx-team-detail">
                                                     <ul>
-                                                        <li><strong>Course :</strong>
+                                                        <li><strong>Type :</strong>
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" id="course">
+                                                                <input type="text" class="form-control" id="type">
                                                             </div>
                                                         </li>
                                                     </ul>
@@ -458,9 +417,34 @@
                                         <div class="col-md-6 col-sm-12">
 											<div class="fx-team-detail">
 												<ul>
-													<li><strong>Enrollment Date :</strong>
+													<li><strong> Shelf Location :</strong>
                                                         <div class="form-group">
-														    <input type="date" id="enr_date" class="form-control">
+														    <input type="number" id="shelf_loc" class="form-control">
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> Book No :</strong>
+                                                        <div class="form-group">
+														    <input type="number" id="book_no" class="form-control">
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div class="col-sm-12" style="padding-top: 30px;">
+											<h3>Other Details</h3>
+										</div>
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong>Purchase Date :</strong>
+                                                        <div class="form-group">
+														    <input type="date" id="purchase_date" class="form-control">
                                                         </div>
 													</li>
 												</ul>
@@ -469,9 +453,9 @@
 										<div class="col-md-6 col-sm-12">
 											<div class="fx-team-detail">
 												<ul>
-													<li><strong>Enrollment Number :</strong>
+													<li><strong>Due Date :</strong>
                                                         <div class="form-group">
-														    <input type="number" id="enr_no" class="form-control">
+														    <input type="date" id="due_date" class="form-control">
                                                         </div>
                                                     </li>
 												</ul>
@@ -480,9 +464,9 @@
                                         <div class="col-md-6 col-sm-12">
 											<div class="fx-team-detail">
 												<ul>
-													<li><strong> Course Duration :</strong>
+													<li><strong>Last Borrowed :</strong>
                                                         <div class="form-group">
-														    <input type="number" id="course_duration" class="form-control">
+														    <input type="date" id="last_borrowed" class="form-control">
                                                         </div>
 													</li>
 												</ul>
@@ -491,24 +475,9 @@
                                         <div class="col-md-6 col-sm-12">
 											<div class="fx-team-detail">
 												<ul>
-													<li><strong>Roll No :</strong>
+													<li><strong>Borrower Name :</strong>
                                                         <div class="form-group">
-														    <input type="number" id="roll_no" class="form-control">
-                                                        </div>
-													</li>
-												</ul>
-											</div>
-										</div>
-                                        <div class="col-md-6 col-sm-12">
-											<div class="fx-team-detail">
-												<ul>
-													<li><strong>Profile Completion :</strong>
-                                                        <div class="form-group">
-														    <select class="form-control form-select">
-                                                                <option value="" disabled selected hidden>Select Status</option>
-                                                                    <option value="complete">Complete</option>
-                                                                    <option value="not_complete">Not Complete</option>
-                                                            </select>
+														    <input type="text" id="borrower_name" class="form-control">
                                                         </div>
 													</li>
 												</ul>
@@ -517,47 +486,23 @@
 										<div class="col-md-6 col-sm-12">
 											<div class="fx-team-detail">
 												<ul>
-													<li><strong>Scholarship Status :</strong>
+													<li><strong>Stock Status :</strong>
                                                         <div class="form-group">
 														    <select class="form-control form-select">
                                                                 <option value="" disabled selected hidden>Select Status</option>
-                                                                    <option value="complete">Complete</option>
-                                                                    <option value="merit">Merit</option>
-                                                                    <option value="not_eligible">Not Eligible</option>
+                                                                    <option value="in_stock">In Stock</option>
+                                                                    <option value="out_of_stock">Out Of Stock</option>
+                                                                    <option value="issue">Issue</option>
+                                                                    <option value="repair">Repair</option>
                                                             </select>
                                                         </div>
                                                     </li>
-												</ul>
-											</div>
-										</div>
-                                         <div class="col-sm-12" style="padding-top: 30px;">
-											<h3>Parent Details</h3>
-										</div>
-                                        <div class="col-md-6 col-sm-12">
-											<div class="fx-team-detail">
-												<ul>
-													<li><strong> Parent/Guardian Name :</strong>
-                                                        <div class="form-group">
-														    <input type="text" id="parent_name" class="form-control">
-                                                        </div>
-													</li>
-												</ul>
-											</div>
-										</div>
-                                        <div class="col-md-6 col-sm-12">
-											<div class="fx-team-detail">
-												<ul>
-													<li><strong>Parent/Guardian Mobile :</strong>
-                                                        <div class="form-group">
-														    <input type="number" id="parent_mobile" class="form-control">
-                                                        </div>
-													</li>
 												</ul>
 											</div>
 										</div>
                                         <div style="padding: 15px;">
                                             <div class="col-sm-2" >
-                                                <a href="#" class="fx-btn-primary m-r-10">Add Student</a>
+                                                <a href="#" class="fx-btn-primary m-r-10">Add Faculty</a>
                                             </div>
 										</div>
 									</div>

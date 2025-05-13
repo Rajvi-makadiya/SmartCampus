@@ -5,6 +5,7 @@ from controllers.chat_controllers import chat
 from controllers.faculty_controllers import faculty
 from controllers.student_controllers import student
 from controllers.course_controllers import course
+from controllers.library_controllers import library
 from utiles.config import init_app, db
 
 app = Flask(__name__ , static_folder = 'static')
@@ -20,6 +21,7 @@ app.register_blueprint(chat , url_prefix='/chat')
 app.register_blueprint(faculty , url_prefix='/faculty')
 app.register_blueprint(student , url_prefix='/student')
 app.register_blueprint(course , url_prefix='/course')
+app.register_blueprint(library , url_prefix='/library')
 @app.route('/')
 def login():
     return render_template('auth/signin.html')
