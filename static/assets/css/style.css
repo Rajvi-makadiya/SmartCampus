@@ -5682,7 +5682,7 @@ div.dataTables_wrapper div.dataTables_info {
 .team-overview h3 {
   font-size: 17px;
   font-weight: 600;
-  color: #484d54;
+  color: #777777;
 }
 .team-overview p {
   max-width: 700px;
@@ -5738,7 +5738,7 @@ div.dataTables_wrapper div.dataTables_info {
 .team-details ul li strong {
   margin-right: 10px;
   font-size: 12px;
-  color: #999;
+  color: #484d54;
   font-weight: 500;
 }
 
@@ -5799,6 +5799,8 @@ div.dataTables_wrapper div.dataTables_info {
 }
 .fx-profile-add .form-group {
   width: 100%;
+  border: 1px solid;
+  border-radius: 5px;
 }
 
 /**  Team List page  **/
@@ -9624,5 +9626,14 @@ div.dataTables_wrapper div.dataTables_info {
     font-weight: 500;
   border-radius: 7px;
   font-size: 11px;
+}
+.add-button{
+    color: green;
+    background-color: transparent;
+    border: 2px solid;
+    padding: 0px 2px;
+    font-weight: 500;
+    border-radius: 50%;
+    font-size: 15px;
 }
 /*# sourceMappingURL=style.css.map */

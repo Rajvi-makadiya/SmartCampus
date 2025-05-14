@@ -357,75 +357,62 @@
 				</div>
 				<form class="fx-profile-add">
 					<div class="row">
-						<div class="col-md-12">
-							<div class="team-sticky-bar">
-								<div class="col-xl-12">
-									<div class="fx-card">
-										<div class="fx-card-content">
-											<div class="fx-team-block-img">
-												<div class="fx-team-block-detail">
-{#													<div class="profile-img">#}
-{#														<div class="avatar-preview">#}
-{#															<div class="t-img" id="imagePreview"#}
-{#																style="background-image: url(../../static/assets/img/user/thumb.jpg);">#}
-{#															</div>#}
-{#														</div>#}
-{#														<span class="tag-label online"></span>#}
-{#														<div class="avatar-edit">#}
-{#															<input type='file' id="imageUpload"#}
-{#																accept=".png, .jpg, .jpeg">#}
-{#															<label for="imageUpload"></label>#}
-{#														</div>#}
-{#													</div>#}
-                                                    <div class="form-group p-b-15">
-{#													<label class="form-label">Select Course</label>#}
-													<select class="form-control form-select">
-                                                        <option value="" disabled selected hidden>Please Choose Course</option>
-														<optgroup label="UG">
-															<option value="t-shirt">BCA</option>
-															<option value="dress">BBA</option>
-														</optgroup>
-														<optgroup label="PG">
-															<option value="table">MCA</option>
-															<option value="sofa">MBA</option>
-														</optgroup>
-													</select>
-												</div>
-													<div class="form-group p-b-15">
-														<input type="text" class="form-control" id="name_profile"
-															placeholder="Enter name">
-													</div>
-													<div class="fx-settings">
-
-														<a href="#" class="fx-btn-primary m-r-10">Add Subject</a>
-														<div class="dropdown" title="Status">
-															<button class="btn btn-secondary dropdown-toggle"
-																type="button" data-bs-toggle="dropdown"
-																aria-expanded="false">
-																<i class="mdi mdi-dots-vertical"></i>
-															</button>
-															<ul class="dropdown-menu">
-																<li><a class="dropdown-item" href="#"><span
-																			class="tag-label online"></span>Online</a>
-																</li>
-																<li><a class="dropdown-item" href="#"><span
-																			class="tag-label offline"></span>Offline</a>
-																</li>
-															</ul>
-														</div>
-													</div>
-												</div>
-												<div class="form-group">
-													<textarea class="form-control" id="profile_detail" rows="9"
-														placeholder="Enter Details"></textarea>
-												</div>
+						<div class="col-xxl-12 col-xl-12 col-md-12">
+							<div class="fx-card team-overview">
+								<div class="fx-card-content fx-card-team team-details">
+									<div class="row">
+                                        <div class="col-md-12 col-sm-12">
+                                                        <div class="fx-team-detail">
+                                                            <ul>
+                                                                <li><strong>Select Course : </strong>
+                                                                    <div class="form-group">
+                                                                        <select class="form-control form-select">
+                                                                    <option value="" disabled selected hidden>Please Choose Course</option>
+                                                                    <optgroup label="UG">
+                                                                        <option value="t-shirt">BCA</option>
+                                                                        <option value="dress">BBA</option>
+                                                                    </optgroup>
+                                                                    <optgroup label="PG">
+                                                                        <option value="table">MCA</option>
+                                                                        <option value="sofa">MBA</option>
+                                                                    </optgroup>
+                                                                </select>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> Subject Code :</strong>
+                                                        <div class="form-group">
+														    <input type="number" id="subject_code" class="form-control">
+                                                        </div>
+													</li>
+												</ul>
 											</div>
+										</div>
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> Subject Name :</strong>
+                                                        <div class="form-group">
+														    <input type="text" id="subject_nm" class="form-control">
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div style="padding: 15px;">
+                                            <div class="col-sm-2" >
+                                                <a href="#" class="fx-btn-primary m-r-10">Add Subject</a>
+                                            </div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-
 					</div>
 				</form>
 			</div>
