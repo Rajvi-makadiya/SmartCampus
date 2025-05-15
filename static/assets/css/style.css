@@ -5808,8 +5808,9 @@ div.dataTables_wrapper div.dataTables_info {
   border: 0;
 }
 .team-list .nav-tabs .nav-item {
-  width: 100%;
+  width: 25%;
   position: relative;
+  padding: 10px;
 }
 .team-list .nav-tabs .nav-item .fx-tool {
   background-color: #fff;
@@ -5840,6 +5841,19 @@ div.dataTables_wrapper div.dataTables_info {
   font-size: 14px;
   color: #999;
   font-weight: 500;
+  box-shadow: 0 16px 38px -12px #0000008f, 0 4px 25px #0000001f, 0 8px 10px -5px #0003;
+
+}
+.course_card{
+  padding: 15px;
+  box-shadow: 0 16px 38px -12px #0000001f, 0 4px 25px #0000001f, 0 8px 10px -5px #0003;
+}
+.course_card h6{
+      padding-top: 30px;
+    font-weight: 500;
+}
+.course_card table{
+      padding-top: 15px;
 }
 .team-list .nav-link:hover {
   color: #484d54;
