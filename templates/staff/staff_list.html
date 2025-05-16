@@ -9,7 +9,7 @@
     <meta name="description" content="Finx - Best multipurpose admin dashboard template.">
     <meta name="author" content="Maraviya Infotech">
 
-	<title>LMS - {% block title %} Student List{% endblock %}</title>
+	<title>LMS - {% block title %} Staff Member List{% endblock %}</title>
 
 	<!-- App favicon -->
 	<link rel="shortcut icon" href="../../static/assets/img/favicon/favicon.ico">
@@ -348,10 +348,10 @@
 				<!-- Page title & breadcrumb -->
 				<div class="fx-page-title fx-page-title-2">
 					<div class="fx-breadcrumb">
-						<h5>Student List</h5>
+						<h5>Staff Member List</h5>
 						<ul>
 							<li><a href="/admin/dashboard">LMS</a></li>
-							<li>Student List</li>
+							<li>Staff Member List</li>
 						</ul>
 					</div>
 				</div>
@@ -364,23 +364,19 @@
 										<thead>
 											<tr>
                                                 <th>ID</th>
-                                                <th>Roll No</th>
                                                 <th>Image</th>
 												<th>Name</th>
-												<th>Email</th>
-												<th>Gender</th>
-												<th>Mobile</th>
 												<th>Department</th>
-                                                <th>Date Of Birth</th>
+                                                <th>Role</th>
+												<th>Mobile</th>
+												<th>Email</th>
                                                 <th>Address</th>
-                                                <th>Enrollment Date</th>
-												<th>Enrollment Number</th>
-                                                <th>Course</th>
-												<th>Course Duration</th>
-												<th>Scholarship Status</th>
-                                                <th>Parent/Guardian Name</th>
-                                                <th>Parent/Guardian Mobile</th>
-                                                <th>Profile Completion</th>
+                                                <th>Status</th>
+												<th>Joining Date</th>
+												<th>Gender</th>
+												<th>Salary</th>
+                                                <th>Experience (Years)</th>
+                                                <th>Birthdate</th>
 												<th>Action</th>
 											</tr>
 										</thead>
@@ -388,24 +384,20 @@
 										<tbody>
 											<tr>
                                                 <td>01</td>
-                                                <td>112</td>
 												<td><img class="tbl-thumb" src="../../static/assets/img/user/6.jpg"
 														alt="User Image"></td>
 												<td>Rajvi Makadiya</td>
-												<td>rajvi123@gmail.com</td>
-												<td>Female</td>
-												<td>9658745832</td>
 												<td>Computer</td>
-                                                <td>05/11/2003</td>
+                                                <td>Librarian</td>
+												<td>9658745832</td>
+												<td>test@email.com</td>
                                                 <td>002,abc residency, surat</td>
+                                                <td><span class="stock-green">Active</span></td>
 												<td>15/04/2021</td>
-												<td>20222468112</td>
-                                                <td>Computer Science</td>
-                                                <td>2024-26</td>
-                                                <td>merit</td>
-                                                <td>Shaileshbhai Makadiya</td>
-                                                <td>9737778751</td>
-                                                <td><span class="stock-green">Complete</span></td>
+												<td>Female</td>
+                                                <td>20000</td>
+                                                <td>3</td>
+                                                <td>05/11/2003</td>
 												<td>
 													<div class="d-flex justify-content-center">
 														<button type="button"

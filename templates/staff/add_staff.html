@@ -9,7 +9,7 @@
     <meta name="description" content="Finx - Best multipurpose admin dashboard template.">
     <meta name="author" content="Maraviya Infotech">
 
-	<title>LMS - {% block title %} Student List{% endblock %}</title>
+	<title>LMS - {% block title %} New Staff Register{% endblock %}</title>
 
 	<!-- App favicon -->
 	<link rel="shortcut icon" href="../../static/assets/img/favicon/favicon.ico">
@@ -45,13 +45,13 @@
 		</div>
 
 		<!-- Header -->
-		{%  include 'layout/header.html' %}
+	{%  include 'layout/header.html' %}
 
 		<!-- sidebar -->
 		{%  include 'layout/sidebar.html' %}
 
 		<!-- Notify sidebar -->
-		<div class="fx-notif/y-bar-overlay"></div>
+		<div class="fx-notify-bar-overlay"></div>
 		<div class="fx-notify-bar">
 			<div class="fx-bar-title">
 				<h6>Notifications<span class="label">12</span></h6>
@@ -348,89 +348,176 @@
 				<!-- Page title & breadcrumb -->
 				<div class="fx-page-title fx-page-title-2">
 					<div class="fx-breadcrumb">
-						<h5>Student List</h5>
+						<h5>Register New staff Member</h5>
 						<ul>
 							<li><a href="/admin/dashboard">LMS</a></li>
-							<li>Student List</li>
+							<li>New Staff Member</li>
 						</ul>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<div class="fx-card card-default product-list">
-							<div class="fx-card-content ">
-								<div class="table-responsive">
-									<table id="product_list" class="table" style="width:100%">
-										<thead>
-											<tr>
-                                                <th>ID</th>
-                                                <th>Roll No</th>
-                                                <th>Image</th>
-												<th>Name</th>
-												<th>Email</th>
-												<th>Gender</th>
-												<th>Mobile</th>
-												<th>Department</th>
-                                                <th>Date Of Birth</th>
-                                                <th>Address</th>
-                                                <th>Enrollment Date</th>
-												<th>Enrollment Number</th>
-                                                <th>Course</th>
-												<th>Course Duration</th>
-												<th>Scholarship Status</th>
-                                                <th>Parent/Guardian Name</th>
-                                                <th>Parent/Guardian Mobile</th>
-                                                <th>Profile Completion</th>
-												<th>Action</th>
-											</tr>
-										</thead>
+				<form class="fx-profile-add">
+					<div class="row">
+						<div class="col-xxl-12 col-xl-12 col-md-12">
+							<div class="fx-card team-overview">
+								<div class="fx-card-content fx-card-team team-details">
+									<div class="row">
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> First Name :</strong>
+                                                        <div class="form-group">
+														    <input type="text" id="first_nm" class="form-control">
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> Last Name :</strong>
+                                                        <div class="form-group">
+														    <input type="text" id="last_nm" class="form-control">
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div class="col-md-6 col-sm-12">
+                                                        <div class="fx-team-detail">
+                                                            <ul>
+                                                                <li><strong>Gender : </strong>
+                                                                    <div class="form-group">
+                                                                        <select class="form-control form-select">
+                                                                    <option value="" disabled selected hidden>Select Gender</option>
 
-										<tbody>
-											<tr>
-                                                <td>01</td>
-                                                <td>112</td>
-												<td><img class="tbl-thumb" src="../../static/assets/img/user/6.jpg"
-														alt="User Image"></td>
-												<td>Rajvi Makadiya</td>
-												<td>rajvi123@gmail.com</td>
-												<td>Female</td>
-												<td>9658745832</td>
-												<td>Computer</td>
-                                                <td>05/11/2003</td>
-                                                <td>002,abc residency, surat</td>
-												<td>15/04/2021</td>
-												<td>20222468112</td>
-                                                <td>Computer Science</td>
-                                                <td>2024-26</td>
-                                                <td>merit</td>
-                                                <td>Shaileshbhai Makadiya</td>
-                                                <td>9737778751</td>
-                                                <td><span class="stock-green">Complete</span></td>
-												<td>
-													<div class="d-flex justify-content-center">
-														<button type="button"
-															class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-															data-bs-toggle="dropdown" aria-haspopup="true"
-															aria-expanded="false" data-display="static">
-															<span class="sr-only"><i
-																	class="ri-settings-3-line"></i></span>
-														</button>
-														<div class="dropdown-menu">
-															<a class="dropdown-item" href="#">Edit</a>
-															<a class="dropdown-item" href="#">Delete</a>
-														</div>
-													</div>
-												</td>
-											</tr>
+                                                                        <option value="male">Male</option>
+                                                                        <option value="female">Female</option>
 
+                                                                </select>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> Mobile Number :</strong>
+                                                        <div class="form-group">
+														    <input type="number" id="mobile" class="form-control">
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> Password :</strong>
+                                                        <div class="form-group">
+														    <input type="password" id="pwd" class="form-control">
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> Re-Enter Password :</strong>
+                                                        <div class="form-group">
+														    <input type="password" id="re_enter_pwd" class="form-control">
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> Designation :</strong>
+                                                        <div class="form-group">
+														    <input type="text" id="designation" class="form-control">
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div class="col-md-6 col-sm-12">
+                                                        <div class="fx-team-detail">
+                                                            <ul>
+                                                                <li><strong>Select Department : </strong>
+                                                                    <div class="form-group">
+                                                                        <select class="form-control form-select">
+                                                                    <option value="" disabled selected hidden>Select Department</option>
 
-										</tbody>
-									</table>
+                                                                        <option value="library">Library</option>
+                                                                        <option value="administration">Administration</option>
+                                                                        <option value="transport">Transport</option>
+                                                                        <option value="laboratory">Laboratory</option>
+
+                                                                </select>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> Email :</strong>
+                                                        <div class="form-group">
+														    <input type="email" id="email" class="form-control">
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> Date Of Birth :</strong>
+                                                        <div class="form-group">
+														    <input type="date" id="birthdate" class="form-control">
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div class="col-md-12 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> Address :</strong>
+                                                        <div class="form-group">
+                                                            <textarea id="address" class="form-control" rows="2"></textarea>
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div class="col-md-12 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> Education :</strong>
+                                                        <div class="form-group">
+                                                            <textarea id="education" class="form-control" rows="2"></textarea>
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div style="padding: 15px;">
+                                            <div class="col-sm-2" >
+                                                <a href="#" class="fx-btn-primary m-r-10">Add Member</a>
+                                            </div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				</form>
 			</div>
 		</div>
 
