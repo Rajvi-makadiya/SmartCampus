@@ -9,7 +9,7 @@
     <meta name="description" content="Finx - Best multipurpose admin dashboard template.">
     <meta name="author" content="Maraviya Infotech">
 
-	<title>LMS - {% block title %} Staff Member List{% endblock %}</title>
+	<title>LMS - {% block title %} Hostel Room List{% endblock %}</title>
 
 	<!-- App favicon -->
 	<link rel="shortcut icon" href="../../static/assets/img/favicon/favicon.ico">
@@ -348,10 +348,10 @@
 				<!-- Page title & breadcrumb -->
 				<div class="fx-page-title fx-page-title-2">
 					<div class="fx-breadcrumb">
-						<h5>Staff Member List</h5>
+						<h5>Hostel Room List</h5>
 						<ul>
 							<li><a href="/admin/dashboard">LMS</a></li>
-							<li>Staff Member List</li>
+							<li>Room List</li>
 						</ul>
 					</div>
 				</div>
@@ -360,10 +360,10 @@
 						<div class="fx-card card-default product-list">
 							<div class="fx-card-content ">
                                 <div class="fx-card-header">
-									<h4 class="fx-card-title">Staff List</h4>
+									<h4 class="fx-card-title">Room List</h4>
 									<div class="header-tools">
-										<div class="dropdown" title="Add Staff">
-                                            <a href="/staff/add-staff" class="add-button"><i
+										<div class="dropdown" title="Add Room">
+                                            <a href="/hostel/add-room" class="add-button"><i
 											class="ri-add-line"></i></a>
 										</div>
 									</div>
@@ -373,19 +373,18 @@
 										<thead>
 											<tr>
                                                 <th>ID</th>
-                                                <th>Image</th>
-												<th>Name</th>
-												<th>Department</th>
-                                                <th>Role</th>
-												<th>Mobile</th>
-												<th>Email</th>
-                                                <th>Address</th>
-                                                <th>Status</th>
-												<th>Joining Date</th>
-												<th>Gender</th>
-												<th>Salary</th>
-                                                <th>Experience (Years)</th>
-                                                <th>Birthdate</th>
+                                                <th>Block</th>
+                                                <th>Room No</th>
+												<th>Type</th>
+                                                <th>Floor</th>
+												<th>Capacity</th>
+												<th>Status</th>
+                                                <th>Occupants</th>
+												<th>Cost Per Bed</th>
+                                                <th>Condition</th>
+                                                <th>Assigned Date</th>
+                                                <th>Check In</th>
+                                                <th>Check Out</th>
 												<th>Action</th>
 											</tr>
 										</thead>
@@ -393,20 +392,18 @@
 										<tbody>
 											<tr>
                                                 <td>01</td>
-												<td><img class="tbl-thumb" src="../../static/assets/img/user/6.jpg"
-														alt="User Image"></td>
-												<td>Rajvi Makadiya</td>
-												<td>Computer</td>
-                                                <td>Librarian</td>
-												<td>9658745832</td>
-												<td>test@email.com</td>
-                                                <td>002,abc residency, surat</td>
-                                                <td><span class="stock-green">Active</span></td>
-												<td>15/04/2021</td>
-												<td>Female</td>
-                                                <td>20000</td>
-                                                <td>3</td>
-                                                <td>05/11/2003</td>
+                                                <td>A</td>
+												<td>203</td>
+												<td>Double</td>
+												<td>2</td>
+												<td>2</td>
+                                                <td><span class="stock-orange">Occupied</span></td>
+                                                <td>2</td>
+												<td>6000</td>
+                                                <td>Good</td>
+                                                <td>2024-08-01</td>
+                                                <td>2024-08-01</td>
+                                                <td>2025-07-31</td>
 												<td>
 													<div class="d-flex justify-content-center">
 														<button type="button"

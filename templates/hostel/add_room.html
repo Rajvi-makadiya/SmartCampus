@@ -9,7 +9,7 @@
     <meta name="description" content="Finx - Best multipurpose admin dashboard template.">
     <meta name="author" content="Maraviya Infotech">
 
-	<title>LMS - {% block title %} Staff Member List{% endblock %}</title>
+	<title>LMS - {% block title %} Hostel Room Register{% endblock %}</title>
 
 	<!-- App favicon -->
 	<link rel="shortcut icon" href="../../static/assets/img/favicon/favicon.ico">
@@ -45,13 +45,13 @@
 		</div>
 
 		<!-- Header -->
-		{%  include 'layout/header.html' %}
+	{%  include 'layout/header.html' %}
 
 		<!-- sidebar -->
 		{%  include 'layout/sidebar.html' %}
 
 		<!-- Notify sidebar -->
-		<div class="fx-notif/y-bar-overlay"></div>
+		<div class="fx-notify-bar-overlay"></div>
 		<div class="fx-notify-bar">
 			<div class="fx-bar-title">
 				<h6>Notifications<span class="label">12</span></h6>
@@ -348,90 +348,227 @@
 				<!-- Page title & breadcrumb -->
 				<div class="fx-page-title fx-page-title-2">
 					<div class="fx-breadcrumb">
-						<h5>Staff Member List</h5>
+						<h5>New Hostel Room</h5>
 						<ul>
 							<li><a href="/admin/dashboard">LMS</a></li>
-							<li>Staff Member List</li>
+							<li>Add Room</li>
 						</ul>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<div class="fx-card card-default product-list">
-							<div class="fx-card-content ">
-                                <div class="fx-card-header">
-									<h4 class="fx-card-title">Staff List</h4>
-									<div class="header-tools">
-										<div class="dropdown" title="Add Staff">
-                                            <a href="/staff/add-staff" class="add-button"><i
-											class="ri-add-line"></i></a>
+				<form class="fx-profile-add">
+					<div class="row">
+						<div class="col-xxl-12 col-xl-12 col-md-12">
+							<div class="fx-card team-overview">
+								<div class="fx-card-content fx-card-team team-details">
+									<div class="row">
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> Room No:</strong>
+                                                        <div class="form-group">
+														    <input type="number" id="room_no" class="form-control">
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> Room Type :</strong>
+                                                        <div class="form-group">
+														     <select class="form-control form-select">
+                                                                    <option value="" disabled selected hidden>Select Room Type</option>
+                                                                    <option value="single">Single</option>
+                                                                    <option value="double">Double</option>
+                                                                    <option value="triple">Triple</option>
+                                                             </select>
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong>Floor:</strong>
+                                                        <div class="form-group">
+														    <input type="number" id="floor" class="form-control">
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> Capacity :</strong>
+                                                        <div class="form-group">
+														    <input type="number" id="capacity" class="form-control">
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div class="col-md-6 col-sm-12">
+                                                        <div class="fx-team-detail">
+                                                            <ul>
+                                                                <li><strong>Status : </strong>
+                                                                    <div class="form-group">
+                                                                <select class="form-control form-select">
+                                                                    <option value="" disabled selected hidden>Select Status</option>
+                                                                    <option value="vacant">Vacant</option>
+                                                                    <option value="occupied">Occupied</option>
+                                                                </select>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> Current Occupants :</strong>
+                                                        <div class="form-group">
+														    <input type="number" id="cur_ocupts" class="form-control">
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> Price :</strong>
+                                                        <div class="form-group">
+														    <input type="number" id="price" class="form-control">
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> Room Condition :</strong>
+                                                        <div class="form-group">
+														    <select class="form-control form-select">
+                                                                    <option value="" disabled selected hidden>Select Condition</option>
+                                                                    <option value="good">Good</option>
+                                                                    <option value="repair">Needs Repair</option>
+                                                            </select>
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> Date Assigned :</strong>
+                                                        <div class="form-group">
+														    <input type="date" id="date_assigned" class="form-control">
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div class="col-md-6 col-sm-12">
+                                                        <div class="fx-team-detail">
+                                                            <ul>
+                                                                <li><strong>Room Supervisor Staff : </strong>
+                                                                    <div class="form-group">
+                                                                        <select class="form-control form-select">
+                                                                    <option value="" disabled selected hidden>Select Supervisor</option>
+
+                                                                        <option value="">Rajvi</option>
+                                                                        <option value="">Mayank</option>
+                                                                        <option value="">Drashti</option>
+                                                                        <option value="">Grisha</option>
+
+                                                                </select>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> Hostel Block :</strong>
+                                                        <div class="form-group">
+														    <select class="form-control form-select">
+                                                                    <option value="" disabled selected hidden>Select Block</option>
+                                                                        <option value="a">A</option>
+                                                                        <option value="b">B</option>
+                                                                        <option value="c">C</option>
+                                                                        <option value="d">D</option>
+                                                            </select>
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong>Room Type Code :</strong>
+                                                        <div class="form-group">
+														    <select class="form-control form-select">
+                                                                    <option value="" disabled selected hidden>Select Code</option>
+                                                                        <option value="sgl">Single (SGL)</option>
+                                                                        <option value="dbl">Double (DBL)</option>
+                                                                        <option value="trl">Triple (TRL)</option>
+                                                            </select>
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> Check-In Date :</strong>
+                                                        <div class="form-group">
+                                                            <input type="date" id="check_in_date" class="form-control">
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div class="col-md-6 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> Check-Out Date :</strong>
+                                                        <div class="form-group">
+                                                            <input type="date" id="check_out_date" class="form-control">
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div class="col-md-12 col-sm-12">
+											<div class="fx-team-detail">
+												<ul>
+													<li><strong> Room Description :</strong>
+                                                        <div class="form-group">
+                                                            <textarea rows="2" class="form-control" id="room_des"></textarea>
+                                                        </div>
+													</li>
+												</ul>
+											</div>
+										</div>
+                                        <div style="padding: 15px;">
+                                            <div class="col-sm-2" >
+                                                <a href="#" class="fx-btn-primary m-r-10">Add Member</a>
+                                            </div>
 										</div>
 									</div>
-								</div>
-								<div class="table-responsive">
-									<table id="product_list" class="table" style="width:100%">
-										<thead>
-											<tr>
-                                                <th>ID</th>
-                                                <th>Image</th>
-												<th>Name</th>
-												<th>Department</th>
-                                                <th>Role</th>
-												<th>Mobile</th>
-												<th>Email</th>
-                                                <th>Address</th>
-                                                <th>Status</th>
-												<th>Joining Date</th>
-												<th>Gender</th>
-												<th>Salary</th>
-                                                <th>Experience (Years)</th>
-                                                <th>Birthdate</th>
-												<th>Action</th>
-											</tr>
-										</thead>
-
-										<tbody>
-											<tr>
-                                                <td>01</td>
-												<td><img class="tbl-thumb" src="../../static/assets/img/user/6.jpg"
-														alt="User Image"></td>
-												<td>Rajvi Makadiya</td>
-												<td>Computer</td>
-                                                <td>Librarian</td>
-												<td>9658745832</td>
-												<td>test@email.com</td>
-                                                <td>002,abc residency, surat</td>
-                                                <td><span class="stock-green">Active</span></td>
-												<td>15/04/2021</td>
-												<td>Female</td>
-                                                <td>20000</td>
-                                                <td>3</td>
-                                                <td>05/11/2003</td>
-												<td>
-													<div class="d-flex justify-content-center">
-														<button type="button"
-															class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
-															data-bs-toggle="dropdown" aria-haspopup="true"
-															aria-expanded="false" data-display="static">
-															<span class="sr-only"><i
-																	class="ri-settings-3-line"></i></span>
-														</button>
-														<div class="dropdown-menu">
-															<a class="dropdown-item" href="#">Edit</a>
-															<a class="dropdown-item" href="#">Delete</a>
-														</div>
-													</div>
-												</td>
-											</tr>
-
-
-										</tbody>
-									</table>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				</form>
 			</div>
 		</div>
 
