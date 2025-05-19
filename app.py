@@ -8,6 +8,7 @@ from controllers.student_controllers import student
 from controllers.course_controllers import course
 from controllers.library_controllers import library
 from controllers.hostel_controllers import hostel
+from controllers.transport_controllers import transport
 from utiles.config import init_app, db
 
 app = Flask(__name__ , static_folder = 'static')
@@ -26,6 +27,7 @@ app.register_blueprint(student , url_prefix='/student')
 app.register_blueprint(course , url_prefix='/course')
 app.register_blueprint(library , url_prefix='/library')
 app.register_blueprint(hostel , url_prefix='/hostel')
+app.register_blueprint(transport , url_prefix='/transport')
 @app.route('/')
 def login():
     return render_template('auth/signin.html')

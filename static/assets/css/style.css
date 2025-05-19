@@ -9601,7 +9601,11 @@ div.dataTables_wrapper div.dataTables_info {
 .crud-color-c.selected .crud-color:before {
   display: block;
 }
-
+.vehicle-map{
+  text-align: center;
+  font-size: 20px;
+  color: #000000a3;
+}
 .stock-green{
       color: #198754;
     background-color: #19875426;
